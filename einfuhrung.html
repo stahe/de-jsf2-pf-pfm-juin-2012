@@ -1,0 +1,1245 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Einführung in Java Server Faces, PrimeFaces und PrimeFaces Mobile anhand von Beispielen">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/de-jsf2-pf-pfm-juin-2012/einfuhrung.html">
+      
+      
+        <link rel="prev" href="index.html">
+      
+      
+        <link rel="next" href="java-server-faces.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>1. Einführung - Einführung in Java Server Faces, PrimeFaces und PrimeFaces Mobile anhand von Beispielen</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Einführung in Java Server Faces, PrimeFaces und PrimeFaces Mobile anhand von Beispielen";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-einfuhrung" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Einführung in Java Server Faces, PrimeFaces und PrimeFaces Mobile anhand von Beispielen" class="md-header__button md-logo" aria-label="Einführung in Java Server Faces, PrimeFaces und PrimeFaces Mobile anhand von Beispielen" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Einführung in Java Server Faces, PrimeFaces und PrimeFaces Mobile anhand von Beispielen
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. Einführung
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Zum Dunkelmodus wechseln"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Zum Dunkelmodus wechseln" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Zum Hellmodus wechseln"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Zum Hellmodus wechseln" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/de-jsf2-pf-pfm-juin-2012" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Einführung in Java Server Faces, PrimeFaces und PrimeFaces Mobile anhand von Beispielen" class="md-nav__button md-logo" aria-label="Einführung in Java Server Faces, PrimeFaces und PrimeFaces Mobile anhand von Beispielen" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Einführung in Java Server Faces, PrimeFaces und PrimeFaces Mobile anhand von Beispielen
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/de-jsf2-pf-pfm-juin-2012" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Willkommen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Einführung
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="einfuhrung.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Einführung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-ubersicht" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. Übersicht
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-beispiel-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. Beispiel-
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-verwendete-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. Verwendete Tools
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3. Verwendete Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-installation-der-netbeans-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3.1. Installation der NetBeans-IDE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-installation-der-eclipse-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3.2. Installation der Eclipse-IDE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133-installation-von-wampserver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3.3. Installation von [ WampServer]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="java-server-faces.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Java Server Faces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="beispielanwendung---01-rdvmedecins-jsf2-ejb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Beispielanwendung – 01: rdvmedecins-jsf2-ejb
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="beispielanwendung---02-rdvmedecins-jsf2-spring.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Beispielanwendung – 02: rdvmedecins-jsf2-spring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="einfuhrung-in-die-primefaces-komponentenbibliothek.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Einführung in die PrimeFaces-Komponentenbibliothek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="beispielanwendung-03-rdvmedecins-pf-ejb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Beispielanwendung-03: rdvmedecins-pf-ejb
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="beispielanwendung-04-rdvmedecins-pf-spring.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Beispielanwendung-04: rdvmedecins-pf-spring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="einfuhrung-in-primefaces-mobile.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Einführung in PrimeFaces Mobile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="beispielanwendung-05-rdvmedecins-pfm-ejb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Beispielanwendung 05: rdvmedecins-pfm-ejb
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="beispielanwendung-06-rdvmedecins-pfm-spring.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Beispielanwendung-06: rdvmedecins-pfm-spring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schlussfolgerung.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Schlussfolgerung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a id="refheading1882601168461456"></a></p>
+<h1 id="1-einfuhrung">1. <span style="color: #365f91">Einführung</span></h1>
+<p><a id="refheading1433201675182081"></a></p>
+<h2 id="11-ubersicht">1.1. <span style="color: #4f81bd">Übersicht</span></h2>
+<p>Das PDF dieses Dokuments finden Sie |<a href="https://1drv.ms/b/c/f53a919f43d27eb5/IQAWDBOC169UT7gZ_2OtI4AJATmCoaAAUP8SCWo2WGe-bgQ?e=jJRtYn">HIER</a>|.</p>
+<p>Die Beispiele in diesem Dokument finden Sie |<a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQDIQmVhvWyKQ5JeFVh6trHFAckJ1TSSPQwLuUisQ5O0r54?e=bxNcNx">HIER</a>|.</p>
+<p>Hier möchten wir anhand von Beispielen </p>
+<ul>
+<li>das <strong>Java Server Faces 2</strong> (JSF2)-Framework,</li>
+<li>die <strong>PrimeFaces</strong>-Komponentenbibliothek für JSF2 sowie für Desktop- und mobile Anwendungen.</li>
+</ul>
+<p>Dieses Dokument richtet sich in erster Linie an Studierende und Entwickler, die sich für die PrimeFaces-Komponentenbibliothek [<a href="http://www.primefaces.org/"><u><span style="color: #0563c1">http://www.primefaces.org</span></u></a>] interessieren. Dieses Framework bietet Dutzende von AJAX-fähigen Komponenten [<a href="http://www.primefaces.org/showcase/ui/home.jsf"><u><span style="color: #0563c1">http://www.primefaces.org/showcase/ui/home.jsf</span></u></a>], mit denen Sie Webanwendungen erstellen können, deren Erscheinungsbild dem von Desktop-Anwendungen ähnelt. PrimeFaces basiert auf JSF2, daher ist es notwendig, dieses Framework zunächst vorzustellen. PrimeFaces bietet auch spezifische Komponenten für mobile Geräte an. Auch diese werden wir behandeln.</p>
+<p>Um unseren Standpunkt zu veranschaulichen, werden wir eine Terminplanungsanwendung in verschiedenen Umgebungen erstellen:</p>
+<ol>
+<li>eine klassische Webanwendung unter Verwendung von JSF2-/EJB3-/JPA-Technologien auf einem GlassFish 3.1-Server,</li>
+</ol>
+<ol start="2">
+  <li>die gleiche Anwendung mit AJAX-Unterstützung unter Verwendung der PrimeFaces-Technologie
+  </li>
+  <li>und schließlich eine mobile Version unter Verwendung der PrimeFaces Mobile-Technologie.
+  </li>
+</ol>
+
+<p>Jedes Mal, wenn eine Version erstellt wird, werden wir sie in einer JSF2-/Spring-/JPA-Umgebung auf einem Tomcat 7-Server bereitstellen. Wir werden daher sechs Java-EE-Anwendungen erstellen.</p>
+<p>Dieses Dokument behandelt <strong>nur das, was für die Erstellung dieser Anwendungen notwendig ist</strong>. Erwarten Sie daher keine Vollständigkeit – die werden Sie hier nicht finden. Es handelt sich auch nicht um eine Sammlung von Best Practices. Erfahrene Entwickler werden vielleicht feststellen, dass sie die Dinge anders gemacht hätten. Ich hoffe lediglich, dass dieses Dokument auch keine Sammlung von schlechten Praktiken ist.</p>
+<p>Um mehr über JSF2 und PrimeFaces zu erfahren, können Sie die folgende Referenz nutzen:<a id="references"></a> :</p>
+<ul>
+  <li><b>[ref1]: Java EE5 Tutorial </b>[<a href="http://java.sun.com/javaee/5/docs/tutorial/doc/index.html"><u><span style="color: #0563c1">http://java.sun.com/javaee/5/docs/tutorial/doc/index.HTML</span></u></a>], die Sun-Referenz zum Erlernen von Java EE5. Lesen Sie Teil II [Web Tier], um sich mit Webtechnologien, insbesondere JSF, vertraut zu machen. Die Beispiele des Tutorials können heruntergeladen werden. Sie liegen in Form von NetBeans-Projekten vor, die geladen und ausgeführt werden können,
+  </li>
+  <li><b>[ref2]: „Core JavaServer Faces“ </b>von David Geary und Cay S. Horstmann, dritte Auflage, erschienen bei McGraw-Hill,
+  </li>
+  <li><b>[ref3]</b>: PrimeFaces-Dokumentation [<a href="http://primefaces.googlecode.com/files/primefaces_users_guide_3_2.pdf"><u><span style="color: #0563c1">http://primefaces.googlecode.com/files/primefaces_users_guide_3_2.pdf</span></u></a>],
+  </li>
+  <li><b>[ref4]</b>: PrimeFaces Mobile-Dokumentation: [<a href="http://primefaces.googlecode.com/files/primefaces_mobile_users_guide_0_9_2.pdf"><u><span style="color: #0563c1">http://primefaces.googlecode.com/files/primefaces_mobile_users_guide_0_9_2.pdf</span></u></a>].
+  </li>
+</ul>
+
+<p>Wir werden gelegentlich auf [<strong>ref2]</strong> verweisen, um den Leser darauf hinzuweisen, dass er sich mithilfe dieses Buches eingehender mit einem Thema befassen kann.</p>
+<p>Dieses Dokument wurde so verfasst, dass es einem möglichst breiten Publikum zugänglich ist. Die Voraussetzungen für das Verständnis sind folgende:</p>
+<ul>
+  <li>Kenntnisse der Programmiersprache Java,
+  </li>
+  <li>Grundkenntnisse in der Java-EE-Entwicklung.
+  </li>
+</ul>
+
+<p>Alle Ressourcen, die zur Erfüllung dieser Voraussetzungen benötigt werden, finden Sie auf der Website [<a href="https://developpez.com/"><u><span style="color: #0563c1">https://developpez.com</span></u></a>]. Einige davon finden Sie auf der Website [<a href="https://stahe.github.io/"><u><span style="color: #0563c1">https://stahe.github.io</span></u></a>]:</p>
+<ul>
+  <li><b>[ref5]: </b><a href="https://stahe.github.io/de-servlets-java-juin-2002/"><u><span style="color: #0563c1">Einführung in die Webprogrammierung in Java</span></u></a> (September 2002): behandelt die Grundlagen der Webprogrammierung in Java: <b>Servlets </b>und <b>JSP-Seiten,</b>
+  </li>
+  <li><b>[ref6]: </b><a href="https://stahe.github.io/de-java-web-mvc-mai-2006/"><u><span style="color: #0563c1">Die Grundlagen der MVC-Webentwicklung in Java</span></u></a> (Mai 2006) []: empfiehlt die Entwicklung von Webanwendungen unter Verwendung von dreischichtigen Architekturen, bei denen die Webschicht das MVC-Entwurfsmuster (Model, View, Controller) implementiert.
+  </li>
+  <li>[<b>ref7</b>]: <a href="https://stahe.github.io/de-javaee-juin-2012/"><u><span style="color: #0563c1">Einführung in Java EE 5</span></u></a> (Januar 2012).
+  </li>
+  <li>[<b>ref8</b>]: <a href="https://stahe.github.io/de-jpa-juin-2007/"><u><span style="color: #0563c1">Java Persistence in der Praxis</span></u></a> (Juni 2007). Dieses Dokument bietet eine Einführung in die Datenpersistenz unter Verwendung von <b>JPA </b>(<b>Java Persistence API</b>).
+  </li>
+  <li>[<b>ref9</b>]: <a href="https://stahe.github.io/de-webservice-netbeans-glassfish-fev-2009/"><u><span style="color: #0563c1">Erstellen eines Java EE-Webdienstes mit NetBeans und dem GlassFish-Server</span></u></a> (Januar 2009). Dieses Dokument behandelt den Prozess der Erstellung eines Webdienstes. Die in diesem Dokument besprochene Beispielanwendung stammt aus [<b>ref9</b>].
+  </li>
+</ul>
+
+<p><a id="refheading1433221675182081"></a>
+<a id="exemples-document"></a>
+<a id="dossier-exemples"></a></p>
+<h2 id="12-beispiel-">1.2. <span style="color: #4f81bd">Beispiel-</span></h2>
+<p>Die Beispiele in diesem Dokument sind |<a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQDIQmVhvWyKQ5JeFVh6trHFAckJ1TSSPQwLuUisQ5O0r54?e=bxNcNx">HIER</a>| als Maven-Projekte für NetBeans und Eclipse verfügbar:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000DE000000E77F67D3C4.png" width="155" height="162" style="display:inline-block; margin:4px;width:4.11cm;height:4.277cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DE000000E77F67D3C4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<p>So importieren Sie ein Projekt in NetBeans:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000068A0000023216723942.png" width="680" height="228" style="display:inline-block; margin:4px;width:17.997cm;height:6.041cm;" class="odt-zoomable" data-zoom-src="images/100000000000068A0000023216723942.png" /></td></tr></table>
+
+<ul>
+  <li>Öffnen Sie in [1] ein Projekt,
+  </li>
+  <li>wählen Sie in [2] das Projekt aus, das im Dateisystem geöffnet werden soll,
+  </li>
+  <li>in [3] wird es geöffnet.
+  </li>
+</ul>
+
+<p>Mit Eclipse,</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004350000023E590AB225.png" width="539" height="287" style="display:inline-block; margin:4px;width:14.249cm;height:7.594cm;" class="odt-zoomable" data-zoom-src="images/10000000000004350000023E590AB225.png" /></td></tr></table>
+
+<ul>
+  <li>in [1] ein Projekt importieren,
+  </li>
+  <li>in [2] ist das Projekt ein bestehendes Maven-Projekt,
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000078900000214D7121E26.png" width="680" height="188" style="display:inline-block; margin:4px;width:17.997cm;height:4.964cm;" class="odt-zoomable" data-zoom-src="images/100000000000078900000214D7121E26.png" /></td></tr></table>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000078F00000211ACAE7A90.png" width="680" height="186" style="display:inline-block; margin:4px;width:17.997cm;height:4.919cm;" class="odt-zoomable" data-zoom-src="images/100000000000078F00000211ACAE7A90.png" /></td></tr></table>
+
+<ul>
+  <li>in [3]: Sie wählen es im Dateisystem aus,
+  </li>
+  <li>in [4]: Eclipse erkennt es als Maven-Projekt,
+  </li>
+  <li>in [5], das importierte Projekt.
+  </li>
+</ul>
+
+<p><a id="refheading99551454977699"></a></p>
+<h2 id="13-verwendete-tools">1.3. <span style="color: #4f81bd">Verwendete Tools</span></h2>
+<p>Im weiteren Verlauf verwenden wir (Stand Mai 2012):</p>
+<ul>
+  <li>die <b>NetBeans</b> 7.1.2 IDE (Integrierte Entwicklungsumgebung), verfügbar unter [<a href="http://www.netbeans.org/"><u><span style="color: #0563c1">http://www.netbeans.org</span></u></a>],
+  </li>
+  <li>die Eclipse Indigo IDE [<a href="http://www.eclipse.org/"><u><span style="color: #0563c1">http://www.eclipse.org/</span></u></a>] in ihrer angepassten Form als <b>SpringSource Tool Suite </b>(STS) [<a href="http://www.springsource.com/developer/sts"><u><span style="color: #0563c1">http://www.springsource.com/developer/sts</span></u></a>],
+  </li>
+  <li><b>PrimeFaces </b>Version 3.2, verfügbar unter [<a href="http://primefaces.org/"><u><span style="color: #0563c1">http://primefaces.org/</span></u></a>],
+  </li>
+  <li><b>PrimeFaces Mobile </b>Version 0.9.2, verfügbar unter [<a href="http://primefaces.org/"><u><span style="color: #0563c1">http://primefaces.org/</span></u></a>],
+  </li>
+  <li><b>WampServer </b>für die MySQL-Datenbank [<a href="http://www.wampserver.com/"><u><span style="color: #0563c1">http://www.wampserver.com/</span></u></a>].
+  </li>
+</ul>
+
+<p><a id="refheading78364566070260"></a></p>
+<h3 id="131-installation-der-netbeans-ide">1.3.1. <span style="color: #4f81bd"><span style="color: #4f81bd">Installation der NetBeans-IDE</span></span></h3>
+<p>Hier beschreiben wir die Installation von NetBeans 7.1.2, verfügbar unter der URL [<a href="http://netbeans.org/downloads/"><u><span style="color: #0563c1">http://netbeans.org/downloads/</span></u></a>].</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000002560000020F9DBDB580.png" width="419" height="369" style="display:inline-block; margin:4px;width:11.081cm;height:9.765cm;" class="odt-zoomable" data-zoom-src="images/10000000000002560000020F9DBDB580.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<p>Sie können die Java EE-Version sowohl mit GlassFish 3.1.2 als auch mit Apache Tomcat 7.0.22 wählen. Ersteres ermöglicht Ihnen die Entwicklung von Java EE-Anwendungen mit EJB3 (Enterprise JavaBeans), während letzteres die Entwicklung von Java EE-Anwendungen ohne EJB ermöglicht. Wir werden die EJBs anschließend durch das Spring-Framework [<a href="http://www.springsource.com/"><u><span style="color: #0563c1">http://www.springsource.com/</span></u></a>] ersetzen.</p>
+<p>Sobald das NetBeans-Installationsprogramm heruntergeladen wurde, führen Sie es aus. Dazu benötigen Sie ein JDK (Java Development Kit) [<a href="http://www.oracle.com/technetwork/java/javase/overview/index.html"><u><span style="color: #0563c1">http://www.oracle.com/technetwork/java/javase/overview/index.HTML</span></u></a>]. Installieren Sie zusätzlich zu NetBeans 7.1.2:</p>
+<ul>
+  <li>das JUnit-Framework für Unit-Tests,
+  </li>
+  <li>den GlassFish 3.1.2-Server,
+  </li>
+  <li>den Tomcat 7.0.22-Server.
+  </li>
+</ul>
+
+<p>Starten Sie NetBeans, sobald die Installation abgeschlossen ist:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000007220000021C4FE4ACE3.png" width="680" height="201" style="display:inline-block; margin:4px;width:17.997cm;height:5.322cm;" class="odt-zoomable" data-zoom-src="images/10000000000007220000021C4FE4ACE3.png" /></td></tr></table>
+
+<ul>
+  <li>in [1] NetBeans 7.1.2 mit drei Registerkarten:
+  </li>
+  <li>Die Registerkarte [Projekte] zeigt die geöffneten NetBeans-Projekte an;
+  </li>
+  <li>die Registerkarte [Dateien] zeigt die verschiedenen Dateien an, aus denen die geöffneten NetBeans-Projekte bestehen;
+  </li>
+  <li>Die Registerkarte [Dienste] fasst eine Reihe von Tools zusammen, die von NetBeans-Projekten verwendet werden,
+  </li>
+  <li>Wählen Sie in [2] die Registerkarte [Dienste] und in [3] den Abschnitt [Server] aus;
+  </li>
+  <li>in [4] starten Sie den Tomcat-Server, um zu überprüfen, ob er korrekt installiert ist,
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000768000002351735BA3A.png" width="680" height="203" style="display:inline-block; margin:4px;width:17.997cm;height:5.362cm;" class="odt-zoomable" data-zoom-src="images/1000000000000768000002351735BA3A.png" /></td></tr></table>
+
+<ul>
+  <li>In [6] können Sie auf der Registerkarte [Apache Tomcat] [5] überprüfen, ob der Server korrekt gestartet wurde;
+  </li>
+  <li>Beenden Sie in [7] den Tomcat-Server,
+  </li>
+</ul>
+
+<p>Führen Sie die gleichen Schritte aus, um zu überprüfen, ob der GlassFish 3.1.2-Server korrekt installiert ist:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000076A0000022F67E74673.png" width="680" height="200" style="display:inline-block; margin:4px;width:17.997cm;height:5.3cm;" class="odt-zoomable" data-zoom-src="images/100000000000076A0000022F67E74673.png" /></td></tr></table>
+
+<ul>
+  <li>Starten Sie in [8] den GlassFish-Server,
+  </li>
+  <li>Überprüfen Sie in [9], ob er korrekt gestartet wurde,
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000221000002170D8AF1BB.png" width="273" height="268" style="display:inline-block; margin:4px;width:7.211cm;height:7.078cm;" class="odt-zoomable" data-zoom-src="images/1000000000000221000002170D8AF1BB.png" /></td></tr></table>
+
+<ul>
+  <li>in [10] den Server beenden.
+  </li>
+</ul>
+
+<p>Wir haben nun eine voll funktionsfähige IDE. Wir können mit der Erstellung von Projekten beginnen. Während wir an diesen Projekten arbeiten, werden wir verschiedene Funktionen der IDE erkunden.</p>
+<p>Wir werden nun die Eclipse-IDE installieren und die beiden Server – Tomcat 7 und GlassFish 3.1.2 –, die wir gerade heruntergeladen haben, darin registrieren. Dazu müssen wir die Installationsverzeichnisse für diese beiden Server kennen. Diese Informationen finden sich in den Eigenschaften dieser beiden Server:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000670000002C91250A8B5.png" width="680" height="294" style="display:inline-block; margin:4px;width:17.997cm;height:7.786cm;" class="odt-zoomable" data-zoom-src="images/1000000000000670000002C91250A8B5.png" /></td></tr></table>
+
+<ul>
+  <li>in [1] ist der Installationsordner für Tomcat 7,
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000036A00000204F3716BDE.png" width="437" height="258" style="display:inline-block; margin:4px;width:11.562cm;height:6.826cm;" class="odt-zoomable" data-zoom-src="images/100000000000036A00000204F3716BDE.png" /></td></tr></table>
+
+<ul>
+  <li>in [2] der Ordner für die GlassFish-Serverdomänen. Bei der Registrierung von GlassFish in Eclipse müssen Sie lediglich die folgenden Informationen angeben: [D:\Programme\devjava\Glassfish\glassfish-3.1.2\glassfish].
+  </li>
+</ul>
+<p><a id="refheading78366566070260"></a></p>
+<h3 id="132-installation-der-eclipse-ide">1.3.2. <span style="color: #4f81bd">Installation der Eclipse-IDE</span></h3>
+<p>Obwohl Eclipse nicht die in diesem Dokument verwendete IDE ist, werden wir dennoch ihre Installation beschreiben. Der Grund dafür ist, dass die Beispiele in diesem Dokument auch als Maven-Projekte für Eclipse bereitgestellt werden. Maven ist in Eclipse nicht vorinstalliert. Sie müssen dazu ein Plugin installieren. Anstatt eine abgespeckte Eclipse-Version zu installieren, werden wir <strong>die SpringSource Tool Suite</strong> [<a href="http://www.springsource.com/developer/sts"><u><span style="color: #0563c1">http://www.springsource.com/developer/sts</span></u></a>] installieren, eine Eclipse-Version, die bereits mit zahlreichen Plugins zum Spring-Framework sowie einer vorinstallierten Maven-Konfiguration ausgestattet ist.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000006C40000032EEF303571.png" width="680" height="320" style="display:inline-block; margin:4px;width:17.997cm;height:8.458cm;" class="odt-zoomable" data-zoom-src="images/10000000000006C40000032EEF303571.png" /></td></tr></table>
+
+<ul>
+  <li>Gehen Sie auf die  Website <b>der SpringSource Tool Suite </b>(STS) [1], um die aktuelle Version von STS [2A] [2B] herunterzuladen.
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000073C000001845F031E1E.png" width="680" height="142" style="display:inline-block; margin:4px;width:17.997cm;height:3.769cm;" class="odt-zoomable" data-zoom-src="images/100000000000073C000001845F031E1E.png" /></td></tr></table>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000082A000003701E1ABF62.png" width="680" height="286" style="display:inline-block; margin:4px;width:17.997cm;height:7.578cm;" class="odt-zoomable" data-zoom-src="images/100000000000082A000003701E1ABF62.png" /></td></tr></table>
+
+<ul>
+  <li>Die heruntergeladene Datei ist ein Installationsprogramm, das die Dateiverzeichnisstruktur [3A] [3B] erstellt. In [4] starten wir die ausführbare Datei,
+  </li>
+  <li>in [5] den IDE-Arbeitsbereich nach dem Schließen des Begrüßungsfensters. In [6] wird das Fenster „Anwendungsserver“ angezeigt,
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000078E000003F138BD131F.png" width="680" height="355" style="display:inline-block; margin:4px;width:17.997cm;height:9.389cm;" class="odt-zoomable" data-zoom-src="images/100000000000078E000003F138BD131F.png" /></td></tr></table>
+
+<ul>
+  <li>in [7] das Serverfenster. Ein Server ist registriert. Es handelt sich um einen VMware-Server, den wir nicht verwenden werden. In [8] rufen wir den Assistenten zum Hinzufügen eines neuen Servers auf,
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000061A000003A6519CD371.png" width="680" height="407" style="display:inline-block; margin:4px;width:17.997cm;height:10.761cm;" class="odt-zoomable" data-zoom-src="images/100000000000061A000003A6519CD371.png" /></td></tr></table>
+
+<ul>
+  <li>in [9A] werden verschiedene Server angeboten. Wir entscheiden uns für die Installation eines Apache Tomcat 7-Servers [9B],
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000007740000023649ED67E1.png" width="680" height="202" style="display:inline-block; margin:4px;width:17.997cm;height:5.339cm;" class="odt-zoomable" data-zoom-src="images/10000000000007740000023649ED67E1.png" /></td></tr></table>
+
+<ul>
+  <li>in [10] geben wir das Installationsverzeichnis für den mit NetBeans installierten Tomcat 7-Server an. Wenn Sie keinen Tomcat-Server haben, verwenden Sie die Schaltfläche [11],
+  </li>
+  <li>in [12] erscheint der Tomcat-Server im Fenster [Server],
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000007C00000029E6F87BFF7.png" width="680" height="230" style="display:inline-block; margin:4px;width:17.997cm;height:6.078cm;" class="odt-zoomable" data-zoom-src="images/10000000000007C00000029E6F87BFF7.png" /></td></tr></table>
+
+<ul>
+  <li>in [13] starten wir den Server,
+  </li>
+  <li>in [14] läuft er,
+  </li>
+  <li>in [15] stoppen wir ihn.
+  </li>
+</ul>
+
+<p>Im [Console]-Fenster sollten Sie die folgenden Tomcat-Protokolle sehen, wenn alles ordnungsgemäß funktioniert:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">mai</span><span class="w"> </span><span class="mi">26</span><span class="p">,</span><span class="w"> </span><span class="mi">2012</span><span class="w"> </span><span class="mi">8</span><span class="p">:</span><span class="mi">56</span><span class="p">:</span><span class="mi">51</span><span class="w"> </span><span class="n">AM</span><span class="w"> </span><span class="n">org</span><span class="p">.</span><span class="n">apache</span><span class="p">.</span><span class="n">catalina</span><span class="p">.</span><span class="n">core</span><span class="p">.</span><span class="n">AprLifecycleListener</span><span class="w"> </span><span class="k">init</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">Infos</span><span class="p">:</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">APR</span><span class="w"> </span><span class="n">based</span><span class="w"> </span><span class="n">Apache</span><span class="w"> </span><span class="n">Tomcat</span><span class="w"> </span><span class="n">Native</span><span class="w"> </span><span class="n">library</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="k">allows</span><span class="w"> </span><span class="n">optimal</span><span class="w"> </span><span class="n">performance</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">production</span><span class="w"> </span><span class="n">environments</span><span class="w"> </span><span class="n">was</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">found</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">java</span><span class="p">.</span><span class="n">library</span><span class="p">.</span><span class="n">path</span><span class="p">:</span><span class="w"> </span><span class="p">...</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">mai</span><span class="w"> </span><span class="mi">26</span><span class="p">,</span><span class="w"> </span><span class="mi">2012</span><span class="w"> </span><span class="mi">8</span><span class="p">:</span><span class="mi">56</span><span class="p">:</span><span class="mi">55</span><span class="w"> </span><span class="n">AM</span><span class="w"> </span><span class="n">org</span><span class="p">.</span><span class="n">apache</span><span class="p">.</span><span class="n">coyote</span><span class="p">.</span><span class="n">AbstractProtocol</span><span class="w"> </span><span class="k">init</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">Infos</span><span class="p">:</span><span class="w"> </span><span class="n">Initializing</span><span class="w"> </span><span class="n">ProtocolHandler</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;http-bio-8080&quot;</span><span class="p">]</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="n">mai</span><span class="w"> </span><span class="mi">26</span><span class="p">,</span><span class="w"> </span><span class="mi">2012</span><span class="w"> </span><span class="mi">8</span><span class="p">:</span><span class="mi">56</span><span class="p">:</span><span class="mi">55</span><span class="w"> </span><span class="n">AM</span><span class="w"> </span><span class="n">org</span><span class="p">.</span><span class="n">apache</span><span class="p">.</span><span class="n">coyote</span><span class="p">.</span><span class="n">AbstractProtocol</span><span class="w"> </span><span class="k">init</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">Infos</span><span class="p">:</span><span class="w"> </span><span class="n">Initializing</span><span class="w"> </span><span class="n">ProtocolHandler</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;ajp-bio-8009&quot;</span><span class="p">]</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="n">mai</span><span class="w"> </span><span class="mi">26</span><span class="p">,</span><span class="w"> </span><span class="mi">2012</span><span class="w"> </span><span class="mi">8</span><span class="p">:</span><span class="mi">56</span><span class="p">:</span><span class="mi">55</span><span class="w"> </span><span class="n">AM</span><span class="w"> </span><span class="n">org</span><span class="p">.</span><span class="n">apache</span><span class="p">.</span><span class="n">catalina</span><span class="p">.</span><span class="n">startup</span><span class="p">.</span><span class="n">Catalina</span><span class="w"> </span><span class="n">load</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="n">Infos</span><span class="p">:</span><span class="w"> </span><span class="n">Initialization</span><span class="w"> </span><span class="n">processed</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">4527</span><span class="w"> </span><span class="n">ms</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="n">mai</span><span class="w"> </span><span class="mi">26</span><span class="p">,</span><span class="w"> </span><span class="mi">2012</span><span class="w"> </span><span class="mi">8</span><span class="p">:</span><span class="mi">56</span><span class="p">:</span><span class="mi">55</span><span class="w"> </span><span class="n">AM</span><span class="w"> </span><span class="n">org</span><span class="p">.</span><span class="n">apache</span><span class="p">.</span><span class="n">catalina</span><span class="p">.</span><span class="n">core</span><span class="p">.</span><span class="n">StandardService</span><span class="w"> </span><span class="n">startInternal</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="n">Infos</span><span class="p">:</span><span class="w"> </span><span class="n">Démarrage</span><span class="w"> </span><span class="n">du</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="n">Catalina</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="n">mai</span><span class="w"> </span><span class="mi">26</span><span class="p">,</span><span class="w"> </span><span class="mi">2012</span><span class="w"> </span><span class="mi">8</span><span class="p">:</span><span class="mi">56</span><span class="p">:</span><span class="mi">55</span><span class="w"> </span><span class="n">AM</span><span class="w"> </span><span class="n">org</span><span class="p">.</span><span class="n">apache</span><span class="p">.</span><span class="n">catalina</span><span class="p">.</span><span class="n">core</span><span class="p">.</span><span class="n">StandardEngine</span><span class="w"> </span><span class="n">startInternal</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="n">Infos</span><span class="p">:</span><span class="w"> </span><span class="n">Starting</span><span class="w"> </span><span class="n">Servlet</span><span class="w"> </span><span class="n">Engine</span><span class="p">:</span><span class="w"> </span><span class="n">Apache</span><span class="w"> </span><span class="n">Tomcat</span><span class="o">/</span><span class="mf">7.0.22</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="n">mai</span><span class="w"> </span><span class="mi">26</span><span class="p">,</span><span class="w"> </span><span class="mi">2012</span><span class="w"> </span><span class="mi">8</span><span class="p">:</span><span class="mi">56</span><span class="p">:</span><span class="mi">57</span><span class="w"> </span><span class="n">AM</span><span class="w"> </span><span class="n">org</span><span class="p">.</span><span class="n">apache</span><span class="p">.</span><span class="n">catalina</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">SessionIdGenerator</span><span class="w"> </span><span class="n">createSecureRandom</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="n">Infos</span><span class="p">:</span><span class="w"> </span><span class="n">Creation</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">SecureRandom</span><span class="w"> </span><span class="n">instance</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">session</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="n">generation</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="err">[</span><span class="nn">SHA1PRNG</span><span class="p">]</span><span class="w"> </span><span class="n">took</span><span class="w"> </span><span class="p">[</span><span class="mi">218</span><span class="p">]</span><span class="w"> </span><span class="n">milliseconds</span><span class="p">.</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="n">mai</span><span class="w"> </span><span class="mi">26</span><span class="p">,</span><span class="w"> </span><span class="mi">2012</span><span class="w"> </span><span class="mi">8</span><span class="p">:</span><span class="mi">56</span><span class="p">:</span><span class="mi">57</span><span class="w"> </span><span class="n">AM</span><span class="w"> </span><span class="n">org</span><span class="p">.</span><span class="n">apache</span><span class="p">.</span><span class="n">coyote</span><span class="p">.</span><span class="n">AbstractProtocol</span><span class="w"> </span><span class="n">start</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="n">Infos</span><span class="p">:</span><span class="w"> </span><span class="n">Starting</span><span class="w"> </span><span class="n">ProtocolHandler</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;http-bio-8080&quot;</span><span class="p">]</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="n">mai</span><span class="w"> </span><span class="mi">26</span><span class="p">,</span><span class="w"> </span><span class="mi">2012</span><span class="w"> </span><span class="mi">8</span><span class="p">:</span><span class="mi">56</span><span class="p">:</span><span class="mi">57</span><span class="w"> </span><span class="n">AM</span><span class="w"> </span><span class="n">org</span><span class="p">.</span><span class="n">apache</span><span class="p">.</span><span class="n">coyote</span><span class="p">.</span><span class="n">AbstractProtocol</span><span class="w"> </span><span class="n">start</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="n">Infos</span><span class="p">:</span><span class="w"> </span><span class="n">Starting</span><span class="w"> </span><span class="n">ProtocolHandler</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;ajp-bio-8009&quot;</span><span class="p">]</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="n">mai</span><span class="w"> </span><span class="mi">26</span><span class="p">,</span><span class="w"> </span><span class="mi">2012</span><span class="w"> </span><span class="mi">8</span><span class="p">:</span><span class="mi">56</span><span class="p">:</span><span class="mi">57</span><span class="w"> </span><span class="n">AM</span><span class="w"> </span><span class="n">org</span><span class="p">.</span><span class="n">apache</span><span class="p">.</span><span class="n">catalina</span><span class="p">.</span><span class="n">startup</span><span class="p">.</span><span class="n">Catalina</span><span class="w"> </span><span class="n">start</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="n">Infos</span><span class="p">:</span><span class="w"> </span><span class="n">Server</span><span class="w"> </span><span class="n">startup</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">2252</span><span class="w"> </span><span class="n">ms</span>
+</code></pre></div></td></tr></table></div>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000072E000001D13083DF14.png" width="680" height="172" style="display:inline-block; margin:4px;width:17.997cm;height:4.553cm;" class="odt-zoomable" data-zoom-src="images/100000000000072E000001D13083DF14.png" /></td></tr></table>
+
+<ul>
+  <li>Fügen Sie im Fenster [Servers] einen neuen Server hinzu [16],
+  </li>
+  <li>in [17] ist der Glassfish-Server nicht aufgeführt,
+  </li>
+  <li>verwenden Sie in diesem Fall den Link [18],
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000007A6000001F3BF2CF4D1.png" width="680" height="173" style="display:inline-block; margin:4px;width:17.997cm;height:4.588cm;" class="odt-zoomable" data-zoom-src="images/10000000000007A6000001F3BF2CF4D1.png" /></td></tr></table>
+
+<ul>
+  <li>Wählen Sie in [19] die Option zum Hinzufügen eines Adapters für den GlassFish-Server,
+  </li>
+  <li>dieser wird heruntergeladen, und fügen Sie im Fenster [Server] einen neuen Server hinzu,
+  </li>
+  <li>diesmal werden in [21] die GlassFish-Server aufgelistet,
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000007B3000002BAEC0852D5.png" width="680" height="241" style="display:inline-block; margin:4px;width:17.997cm;height:6.373cm;" class="odt-zoomable" data-zoom-src="images/10000000000007B3000002BAEC0852D5.png" /></td></tr></table>
+
+<ul>
+  <li>Wählen Sie in [22] den mit NetBeans heruntergeladenen GlassFish 3.1.2-Server aus,
+  </li>
+  <li>Geben Sie in [23] den Installationsordner von GlassFish 3.1.2 an (achten Sie auf den in [24] angegebenen Pfad).
+  </li>
+  <li>Wenn Sie keinen GlassFish-Server haben, verwenden Sie die Schaltfläche [25],
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000007B40000016A98589663.png" width="680" height="125" style="display:inline-block; margin:4px;width:17.997cm;height:3.304cm;" class="odt-zoomable" data-zoom-src="images/10000000000007B40000016A98589663.png" /></td></tr></table>
+
+<ul>
+  <li>In [26] fragt der Assistent nach dem Administratorpasswort für den GlassFish-Server. Bei einer Erstinstallation lautet dieses normalerweise <i>adminadmin</i>,
+  </li>
+  <li>sobald der Assistent fertig ist, erscheint der GlassFish-Server im Fenster [Server] [27],
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000007B90000027830BBA770.png" width="680" height="217" style="display:inline-block; margin:4px;width:17.997cm;height:5.754cm;" class="odt-zoomable" data-zoom-src="images/10000000000007B90000027830BBA770.png" /></td></tr></table>
+
+<ul>
+  <li>in [28] starten Sie ihn,
+  </li>
+  <li>in [29] kann ein Problem auftreten. Dies hängt von den bei der Installation angegebenen Informationen ab. GlassFish benötigt ein JDK (Java Development Kit) und kein JRE (Java Runtime Environment),
+  </li>
+  <li>um auf die GlassFish-Server-Eigenschaften zuzugreifen, doppelklicken Sie im Fenster [Servers] darauf,
+  </li>
+  <li>wodurch sich das Fenster [20] öffnet; folgen Sie dort dem Link [Runtime Environment],
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000746000001EDA6246AE7.png" width="680" height="180" style="display:inline-block; margin:4px;width:17.997cm;height:4.764cm;" class="odt-zoomable" data-zoom-src="images/1000000000000746000001EDA6246AE7.png" /></td></tr></table>
+
+<ul>
+  <li>In [31] werden wir die Standard-JRE durch ein JDK ersetzen. Verwenden Sie dazu den Link [32],
+  </li>
+  <li>in [33] die auf dem Rechner installierten JREs,
+  </li>
+  <li>in [34] fügen Sie ein weiteres hinzu,
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000705000001A097CC1980.png" width="680" height="157" style="display:inline-block; margin:4px;width:17.997cm;height:4.166cm;" class="odt-zoomable" data-zoom-src="images/1000000000000705000001A097CC1980.png" /></td></tr></table>
+
+<ul>
+  <li>Wählen Sie in [35] [Standard VM] (Virtual Machine) aus,
+  </li>
+  <li>Wählen Sie in [36] ein JDK (&gt;=1.6) aus,
+  </li>
+  <li>geben Sie in [37] einen Namen für die neue JRE ein,
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000007B600000254AE452154.png" width="680" height="205" style="display:inline-block; margin:4px;width:17.997cm;height:5.435cm;" class="odt-zoomable" data-zoom-src="images/10000000000007B600000254AE452154.png" /></td></tr></table>
+
+<ul>
+  <li>Zurück auf dem JRE-Auswahlbildschirm für GlassFish wählen Sie das in [38] angegebene neue JRE aus,
+  </li>
+  <li>Sobald der Konfigurationsassistent abgeschlossen ist, starten Sie [GlassFish] [39] neu,
+  </li>
+  <li>in [40] wird es gestartet,
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000007BB000001A81F0AF8A3.png" width="680" height="146" style="display:inline-block; margin:4px;width:17.997cm;height:3.856cm;" class="odt-zoomable" data-zoom-src="images/10000000000007BB000001A81F0AF8A3.png" /></td></tr></table>
+
+<ul>
+  <li>in [41] die Server-Verzeichnisstruktur,
+  </li>
+  <li>in [42] greifen wir auf die GlassFish-Protokolle zu:
+  </li>
+</ul>
+
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>...
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>Infos: Running GlassFish Version: GlassFish Server Open Source Edition 3.1.2 (build 23)
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>Infos: Grizzly Framework 1.9.46 started in: 125ms - bound to [0.0.0.0:7676]
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>Infos: Grizzly Framework 1.9.46 started in: 125ms - bound to [0.0.0.0:3700]
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>Infos: Grizzly Framework 1.9.46 started in: 188ms - bound to [0.0.0.0:8080]
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>Infos: Grizzly Framework 1.9.46 started in: 141ms - bound to [0.0.0.0:4848]
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>Infos: Grizzly Framework 1.9.46 started in: 141ms - bound to [0.0.0.0:8181]
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a>Infos: Registered org.glassfish.ha.store.adapter.cache.ShoalBackingStoreProxy for persistence-type = replicated in BackingStoreFactoryRegistry
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a>Infos: GlassFish Server Open Source Edition 3.1.2 (23) heure de démarrage : Felix (13 790 ms), services de démarrage (2 028 ms), total (15 818 ms)
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a>Infos: JMX005: JMXStartupService had Started JMXConnector on JMXService URL service:jmx:rmi://Gportpers3.ad.univ-angers.fr:8686/jndi/rmi://Gportpers3.ad.univ-angers.fr:8686/jmxrmi
+</code></pre></div></td></tr></table></div>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000285000001F32C78F518.png" width="323" height="250" style="display:inline-block; margin:4px;width:8.534cm;height:6.602cm;" class="odt-zoomable" data-zoom-src="images/1000000000000285000001F32C78F518.png" /></td></tr></table>
+
+<ul>
+  <li>In [43] stoppen wir den Glassfish-Server.
+  </li>
+</ul>
+
+<p><a id="refheading78368566070260"></a>
+<a id="wampserver"></a></p>
+<h3 id="133-installation-von-wampserver">1.3.3. <span style="color: #4f81bd">Installation von [ WampServer]</span></h3>
+<p>[WampServer] ist eine Software-Suite für die Entwicklung mit PHP/MySQL/Apache auf einem Windows-Rechner. Wir werden sie ausschließlich für das MySQL-DBMS verwenden.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000079000000289216D1732.png" width="680" height="228" style="display:inline-block; margin:4px;width:17.997cm;height:6.033cm;" class="odt-zoomable" data-zoom-src="images/100000000000079000000289216D1732.png" /></td></tr></table>
+
+<ul>
+  <li>Wählen Sie auf der [WampServer]-Website [1] die passende Version [2] aus.
+  </li>
+  <li>die heruntergeladene ausführbare Datei ist ein Installationsprogramm. Während der Installation werden verschiedene Informationen abgefragt. Diese betreffen MySQL nicht und können daher ignoriert werden. Am Ende der Installation erscheint das Fenster [3]. Starten Sie [WampServer],
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000035B000002A71AD9FCA1.png" width="430" height="340" style="display:inline-block; margin:4px;width:11.365cm;height:8.983cm;" class="odt-zoomable" data-zoom-src="images/100000000000035B000002A71AD9FCA1.png" /></td></tr></table>
+
+<ul>
+  <li>in [4] erscheint das [WampServer]-Symbol in der Taskleiste unten rechts auf dem Bildschirm [4],
+  </li>
+  <li>wenn Sie darauf klicken, erscheint das [5]-Menü. Damit können Sie den Apache-Server und das MySQL-DBMS verwalten. Um Letzteres zu verwalten, verwenden Sie die Option [PhpMyAdmin],
+  </li>
+  <li>wodurch das unten abgebildete Fenster geöffnet wird,
+  </li>
+</ul>
+
+<p><img src="images/10000000000003C600000186DE03B7E4.png" width="670" height="271" style="width:17.729cm;height:7.158cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003C600000186DE03B7E4.png" /></p>
+<p>Wir werden nur wenige Details zur Verwendung von [PhpMyAdmin] angeben. Wir zeigen lediglich, wie man damit die Datenbank für die Beispielanwendung in diesem Tutorial erstellt.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        Dieses Tutorial, verfasst von <strong>Serge Tahé</strong>, wird der Öffentlichkeit unter den Bedingungen der
+<em>Creative Commons Namensnennung – Nicht kommerziell –
+Weitergabe unter gleichen Bedingungen 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

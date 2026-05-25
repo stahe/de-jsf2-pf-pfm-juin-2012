@@ -1,0 +1,1602 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Einführung in Java Server Faces, PrimeFaces und PrimeFaces Mobile anhand von Beispielen">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/de-jsf2-pf-pfm-juin-2012/einfuhrung-in-primefaces-mobile.html">
+      
+      
+        <link rel="prev" href="beispielanwendung-04-rdvmedecins-pf-spring.html">
+      
+      
+        <link rel="next" href="beispielanwendung-05-rdvmedecins-pfm-ejb.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>8. Einführung in PrimeFaces Mobile - Einführung in Java Server Faces, PrimeFaces und PrimeFaces Mobile anhand von Beispielen</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Einführung in Java Server Faces, PrimeFaces und PrimeFaces Mobile anhand von Beispielen";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#8-einfuhrung-in-primefaces-mobile" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Einführung in Java Server Faces, PrimeFaces und PrimeFaces Mobile anhand von Beispielen" class="md-header__button md-logo" aria-label="Einführung in Java Server Faces, PrimeFaces und PrimeFaces Mobile anhand von Beispielen" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Einführung in Java Server Faces, PrimeFaces und PrimeFaces Mobile anhand von Beispielen
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              8. Einführung in PrimeFaces Mobile
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Zum Dunkelmodus wechseln"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Zum Dunkelmodus wechseln" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Zum Hellmodus wechseln"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Zum Hellmodus wechseln" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/de-jsf2-pf-pfm-juin-2012" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Einführung in Java Server Faces, PrimeFaces und PrimeFaces Mobile anhand von Beispielen" class="md-nav__button md-logo" aria-label="Einführung in Java Server Faces, PrimeFaces und PrimeFaces Mobile anhand von Beispielen" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Einführung in Java Server Faces, PrimeFaces und PrimeFaces Mobile anhand von Beispielen
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/de-jsf2-pf-pfm-juin-2012" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Willkommen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="einfuhrung.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Einführung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="java-server-faces.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Java Server Faces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="beispielanwendung---01-rdvmedecins-jsf2-ejb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Beispielanwendung – 01: rdvmedecins-jsf2-ejb
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="beispielanwendung---02-rdvmedecins-jsf2-spring.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Beispielanwendung – 02: rdvmedecins-jsf2-spring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="einfuhrung-in-die-primefaces-komponentenbibliothek.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Einführung in die PrimeFaces-Komponentenbibliothek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="beispielanwendung-03-rdvmedecins-pf-ejb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Beispielanwendung-03: rdvmedecins-pf-ejb
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="beispielanwendung-04-rdvmedecins-pf-spring.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Beispielanwendung-04: rdvmedecins-pf-spring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Einführung in PrimeFaces Mobile
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="einfuhrung-in-primefaces-mobile.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Einführung in PrimeFaces Mobile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#81-die-rolle-von-primefaces-mobile-in-einer-jsf-anwendung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1. Die Rolle von PrimeFaces Mobile in einer JSF-Anwendung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#82-die-vorteile-von-primefaces-mobile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2. Die Vorteile von PrimeFaces Mobile
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#83-primefaces-mobile-lernen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3. PrimeFaces Mobile lernen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#84-ein-erstes-primefaces-mobile-projekt-mv-pfm-01" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4. Ein erstes PrimeFaces Mobile-Projekt: mv-pfm-01
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.4. Ein erstes PrimeFaces Mobile-Projekt: mv-pfm-01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#841-das-netbeans-projekt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4.1. Das NetBeans-Projekt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#85-beispiel-mv-pfm-02-formular-und-modell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5. Beispiel mv-pfm-02: Formular und Modell
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.5. Beispiel mv-pfm-02: Formular und Modell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#851-die-ansichten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5.1. Die Ansichten
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#852-das-netbeans-projekt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5.2. Das NetBeans-Projekt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#853-projektkonfiguration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5.3. Projektkonfiguration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#854-die-primefaces-mobilseite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5.4. Die Primefaces-Mobilseite
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#855-die-vorlage-formjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5.5. Die Vorlage [Form.java]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#856-test-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5.6. Test-
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#86-fazit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.6. Fazit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#87-testen-mit-eclipse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.7. Testen mit Eclipse
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="beispielanwendung-05-rdvmedecins-pfm-ejb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Beispielanwendung 05: rdvmedecins-pfm-ejb
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="beispielanwendung-06-rdvmedecins-pfm-spring.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Beispielanwendung-06: rdvmedecins-pfm-spring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schlussfolgerung.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Schlussfolgerung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a id="refheading1267331553644564"></a></p>
+<h1 id="8-einfuhrung-in-primefaces-mobile">8. <span style="color: #365f91">Einführung in PrimeFaces Mobile</span></h1>
+<p><a id="refheading105029100051761"></a></p>
+<h2 id="81-die-rolle-von-primefaces-mobile-in-einer-jsf-anwendung">8.1. <span style="color: #4f81bd">Die Rolle von PrimeFaces Mobile in einer JSF-Anwendung</span></h2>
+<p><span style="color: #000000">Kehren wir zur Architektur einer PrimeFaces-Anwendung zurück, wie wir sie zu Beginn dieses Dokuments betrachtet haben:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000046F000001630DF691CA.png" width="568" height="178" style="display:inline-block; margin:4px;width:15.016cm;height:4.697cm;" class="odt-zoomable" data-zoom-src="images/100000000000046F000001630DF691CA.png" /></td></tr></table>
+
+<p><span style="color: #000000">Wenn das Ziel ein Handy-Browser ist, müssen wir das Layout anpassen. Tatsächlich muss die Größe eines Smartphone-Bildschirms berücksichtigt und die Benutzerfreundlichkeit der Seiten neu gestaltet werden. Es gibt Bibliotheken, die auf die Erstellung von Webseiten für mobile Geräte spezialisiert sind. Dies ist der Fall bei der </span><strong>PrimeFaces</strong> <span style="color: #000000">Mobile-Bibliothek, die ihrerseits auf der </span><strong>jQuery</strong> <span style="color: #000000">Mobile-Bibliothek basiert.</span></p>
+<p><span style="color: #000000">Die Architektur einer mobilen Webanwendung entspricht der vorherigen, mit dem Unterschied, dass wir zusätzlich zu JSF und PrimeFaces die PrimeFaces Mobile (PFM)-Bibliothek verwenden.</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000046E00000163DD0D5A06.png" width="567" height="177" style="display:inline-block; margin:4px;width:15.002cm;height:4.695cm;" class="odt-zoomable" data-zoom-src="images/100000000000046E00000163DD0D5A06.png" /></td></tr></table>
+
+<p><span style="color: #000000">Wir werden alle mit JSF und PrimeFaces behandelten Konzepte erneut durchgehen. Nur die [Präsentationsschicht] (vor allem die Seiten) wird sich ändern.</span></p>
+<p><a id="refheading105031100051761"></a></p>
+<h2 id="82-die-vorteile-von-primefaces-mobile">8.2. <span style="color: #4f81bd">Die Vorteile von PrimeFaces Mobile</span></h2>
+<p><span style="color: #000000">Die PrimeFaces Mobile-Website</span></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[http://www.primefaces.org/showcase-labs/mobile/showcase.jsf?javax.faces.RenderKitId=PRIMEFACES_MOBILE]
+</code></pre></div>
+<p><span style="color: #000000">bietet eine Liste von Komponenten, die in einer PFM-Seite verwendet werden können [1, 2]:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000052A000002FAED037862.png" width="661" height="381" style="display:inline-block; margin:4px;width:17.489cm;height:10.081cm;" class="odt-zoomable" data-zoom-src="images/100000000000052A000002FAED037862.png" /></td></tr></table>
+
+<p><span style="color: #000000">Sie können Smartphone-Simulatoren verwenden, um die oben genannte Demo-Anwendung anzusehen. Einer davon ist für das iPhone 4 unter der URL [http://iphone4simulator.com/] [3] verfügbar. Geben Sie die Adresse der zu testenden Anwendung in [4] ein, und sie wird in iPhone-Abmessungen angezeigt. Solche Simulatoren sind während der Entwicklungsphase nützlich, doch letztendlich muss die Anwendung unter realen Bedingungen auf verschiedenen Mobilgeräten getestet werden.</span></p>
+<p><a id="refheading105033100051761"></a></p>
+<h2 id="83-primefaces-mobile-lernen">8.3. <span style="color: #4f81bd">PrimeFaces Mobile lernen</span></h2>
+<p><span style="color: #000000">PrimeFaces Mobile bietet weitaus weniger Komponenten als PrimeFaces. Die PrimeFaces Mobile-Website</span></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>[http://www.primefaces.org/showcase-labs/mobile/showcase.jsf?javax.faces.RenderKitId=PRIMEFACES_MOBILE]
+</code></pre></div>
+<p><span style="color: #000000">enthält eine Liste dieser Komponenten. Hier sind zum Beispiel die Komponenten, die in einem Formular verwendet werden können [1], [2], [3]:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000053200000295CEA13248.png" width="665" height="331" style="display:inline-block; margin:4px;width:17.595cm;height:8.745cm;" class="odt-zoomable" data-zoom-src="images/100000000000053200000295CEA13248.png" /></td></tr></table>
+
+<p><span style="color: #000000">Den Quellcode für die Beispiele können Sie hier herunterladen [4]. Wir stellen fest, dass die PFM-Seite, auf der die oben genannten Komponenten [1], [2] und [3] angezeigt werden, wie folgt aussieht:</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml</span> <span style="color:#7f007f">version</span>=<span style="font-style:italic;color:#2a00ff">&quot;1.0&quot;</span> <span style="color:#7f007f">encoding</span>=<span style="font-style:italic;color:#2a00ff">&quot;windows-1250&quot;</span><span style="color:#008080">?&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:view</span> <span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/1999/xhtml&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#7f007f">xmlns:f</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://java.sun.com/jsf/core&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#7f007f">xmlns:h</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://java.sun.com/jsf/html&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#7f007f">xmlns:ui</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://java.sun.com/jsf/facelets&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#7f007f">xmlns:p</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://primefaces.org/ui&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#7f007f">xmlns:pm</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://primefaces.org/mobile&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#7f007f">contentType</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;text/html&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:page</span> <span style="color:#7f007f">title</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Components&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        &lt;!-- Forms --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:view</span> <span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;forms&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:header</span> <span style="color:#7f007f">title</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Forms&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:facet</span> <span style="color:#7f007f">name</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;left&quot;</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">p:button</span> <span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Back&quot;</span> <span style="color:#7f007f">icon</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;back&quot;</span> <span style="color:#7f007f">href</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#main?reverse=true&quot;</span><span style="color:#008080">/&gt;&lt;/</span><span style="color:#3f7f7f">f:facet</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pm:header</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:content</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">p:inputText</span> <span style="color:#7f007f">label</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Input:&quot;</span> <span style="color:#008080">/&gt;</span><span style="color:#000000">   </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">p:inputText</span> <span style="color:#7f007f">label</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Search:&quot;</span> <span style="color:#7f007f">type</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;search&quot;</span><span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">p:inputText</span> <span style="color:#7f007f">label</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Phone:&quot;</span> <span style="color:#7f007f">type</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;tel&quot;</span><span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">p:inputTextarea</span> <span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;inputTextarea&quot;</span> <span style="color:#7f007f">label</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Textarea:&quot;</span><span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:field</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">h:outputLabel</span> <span style="color:#7f007f">for</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;selectOneMenu&quot;</span> <span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Dropdown: &quot;</span><span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">h:selectOneMenu</span> <span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;selectOneMenu&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:selectItem</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Select One&quot;</span> <span style="color:#7f007f">itemValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:selectItem</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 1&quot;</span> <span style="color:#7f007f">itemValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 1&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:selectItem</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 2&quot;</span> <span style="color:#7f007f">itemValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 2&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:selectItem</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 3&quot;</span> <span style="color:#7f007f">itemValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 3&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">h:selectOneMenu</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pm:field</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:inputRange</span> <span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;range&quot;</span> <span style="color:#7f007f">minValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;0&quot;</span> <span style="color:#7f007f">maxValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;100&quot;</span> <span style="color:#7f007f">label</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Range:&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:switch</span> <span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;switch&quot;</span> <span style="color:#7f007f">onLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;yes&quot;</span> <span style="color:#7f007f">offLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;no&quot;</span> <span style="color:#7f007f">label</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Switch:&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">p:selectBooleanCheckbox</span> <span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;booleanCheckbox&quot;</span> <span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;false&quot;</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;I agree&quot;</span> <span style="color:#7f007f">label</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Checkbox&quot;</span><span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">p:selectManyCheckbox</span> <span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;checkbox&quot;</span> <span style="color:#7f007f">label</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Checkboxes: &quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:selectItem</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 1&quot;</span> <span style="color:#7f007f">itemValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 1&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:selectItem</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 2&quot;</span> <span style="color:#7f007f">itemValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 2&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:selectItem</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 3&quot;</span> <span style="color:#7f007f">itemValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 3&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">p:selectManyCheckbox</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">p:selectOneRadio</span> <span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;radio&quot;</span> <span style="color:#7f007f">label</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Radios: &quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:selectItem</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 1&quot;</span> <span style="color:#7f007f">itemValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 1&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:selectItem</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 2&quot;</span> <span style="color:#7f007f">itemValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 2&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:selectItem</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 3&quot;</span> <span style="color:#7f007f">itemValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 3&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">p:selectOneRadio</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pm:content</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pm:view</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pm:page</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">f:view</span><span style="color:#008080">&gt;</span></span></span>
+</code></pre></div>
+
+<ul>
+  <li>Zeile 7: Es erscheint ein neuer Namespace, nämlich der der PrimeFaces Mobile-Komponenten mit dem Präfix <b>pm</b>,
+  </li>
+  <li>Zeile 10: definiert eine Seite. Eine Seite besteht aus mehreren Ansichten (Zeile 12). Zu jedem Zeitpunkt ist nur eine Ansicht sichtbar. Dies ist ein Konzept, das wir in unseren PrimeFaces-Beispielen ausgiebig verwendet haben: eine einzelne Seite mit mehreren Fragmenten, die ein- oder ausgeblendet werden können. Hier müssen wir das nicht tun. Wir legen einfach die anzuzeigende Ansicht fest, wobei die anderen automatisch ausgeblendet werden,
+  </li>
+  <li>Zeile 12: eine Ansicht,
+  </li>
+  <li>Zeilen 13–15: definieren die Kopfzeile der Ansicht:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:header</span> <span style="color:#7f007f">title</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Forms&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:facet</span> <span style="color:#7f007f">name</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;left&quot;</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">p:button</span> <span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Back&quot;</span> <span style="color:#7f007f">icon</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;back&quot;</span> <span style="color:#7f007f">href</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#main?reverse=true&quot;</span><span style="color:#008080">/&gt;&lt;/</span><span style="color:#3f7f7f">f:facet</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pm:header</span><span style="color:#008080">&gt;</span></span></span>
+</code></pre></div>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000012D00000035D778FD36.png" width="212" height="37" style="display:inline-block; margin:4px;width:5.609cm;height:0.988cm;" class="odt-zoomable" data-zoom-src="images/100000000000012D00000035D778FD36.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<p>Beachten Sie das Tag, das zur Erstellung einer Schaltfläche verwendet wird. Das href-Attribut ermöglicht die Navigation. Sein Wert ist hier der Name einer Ansicht. Wenn Sie auf die Schaltfläche klicken, gelangen Sie zurück (<strong>reverse=true</strong>) zur Ansicht mit dem Namen <strong>„main“</strong> (hier nicht dargestellt).</p>
+<ul>
+  <li>Zeile 16: führt den Inhalt der Ansicht ein,
+  </li>
+  <li>Zeile 17: Erzeugt ein Eingabefeld:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">p:inputText</span> <span style="color:#7f007f">label</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Input:&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+</code></pre></div>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001320000004D3F1356BC.png" width="214" height="54" style="display:inline-block; margin:4px;width:5.669cm;height:1.427cm;" class="odt-zoomable" data-zoom-src="images/10000000000001320000004D3F1356BC.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<ul>
+  <li>Zeile 18: ein Eingabefeld mit einem bestimmten Symbol:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">p:inputText</span><span style="color:#008080"> </span><span style="color:#7f007f">label</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Search:&quot;</span><span style="color:#008080"> </span><span style="color:#7f007f">type</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;search&quot;</span><span style="color:#008080">/&gt;</span></span></span>
+</code></pre></div>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000012D00000048A7F97D8B.png" width="211" height="50" style="display:inline-block; margin:4px;width:5.57cm;height:1.332cm;" class="odt-zoomable" data-zoom-src="images/100000000000012D00000048A7F97D8B.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<ul>
+  <li>Zeile 19: ein Eingabefeld für eine Telefonnummer:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">p:inputText</span><span style="color:#008080"> </span><span style="color:#7f007f">label</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Phone:&quot;</span><span style="color:#008080"> </span><span style="color:#7f007f">type</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;tel&quot;</span><span style="color:#008080">/&gt;</span></span></span>
+</code></pre></div>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001350000004A5CCD0B9A.png" width="216" height="52" style="display:inline-block; margin:4px;width:5.72cm;height:1.371cm;" class="odt-zoomable" data-zoom-src="images/10000000000001350000004A5CCD0B9A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<p><strong>Das</strong> „type“-Attribut eines &lt;<strong>inputText</strong>&gt;-Tags hat eine bestimmte Bedeutung: Es legt fest, welche Art von Tastatur dem Benutzer zur Dateneingabe angezeigt wird. Bei <strong>„type=‘tel‘“</strong> wird also eine numerische Tastatur angezeigt,</p>
+<ul>
+  <li>Zeile 20: ein mehrzeiliges, erweiterbares Texteingabefeld:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">p:inputTextarea</span><span style="color:#008080"> </span><span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;inputTextarea&quot;</span><span style="color:#008080"> </span><span style="color:#7f007f">label</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Textarea:&quot;</span><span style="color:#008080">/&gt;</span></span></span>
+</code></pre></div>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001340000006ED76FD3C0.png" width="216" height="77" style="display:inline-block; margin:4px;width:5.72cm;height:2.043cm;" class="odt-zoomable" data-zoom-src="images/10000000000001340000006ED76FD3C0.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<ul>
+  <li>Zeilen 21–29: ein Feld, das mehrere Komponenten vereint:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:field</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">h:outputLabel</span> <span style="color:#7f007f">for</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;selectOneMenu&quot;</span> <span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Dropdown: &quot;</span><span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">h:selectOneMenu</span> <span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;selectOneMenu&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:selectItem</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Select One&quot;</span> <span style="color:#7f007f">itemValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:selectItem</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 1&quot;</span> <span style="color:#7f007f">itemValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 1&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:selectItem</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 2&quot;</span> <span style="color:#7f007f">itemValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 2&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:selectItem</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 3&quot;</span> <span style="color:#7f007f">itemValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 3&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">h:selectOneMenu</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pm:field</span><span style="color:#008080">&gt;</span></span></span>
+</code></pre></div>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000012C0000006074104C29.png" width="210" height="67" style="display:inline-block; margin:4px;width:5.56cm;height:1.78cm;" class="odt-zoomable" data-zoom-src="images/100000000000012C0000006074104C29.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000012C000000A9FB2B43CE.png" width="210" height="118" style="display:inline-block; margin:4px;width:5.56cm;height:3.133cm;" class="odt-zoomable" data-zoom-src="images/100000000000012C000000A9FB2B43CE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<ul>
+  <li>Zeile 2: die Bezeichnung für die Komponente in Zeile 3;
+  </li>
+  <li>Zeile 3: eine Dropdown-Liste;
+  </li>
+  <li>Zeilen 4–7: deren Inhalt;
+  </li>
+</ul>
+
+<ul>
+  <li>Zeile 30: ein Schieberegler:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:inputRange</span><span style="color:#000000"> </span><span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;range&quot;</span><span style="color:#000000"> </span><span style="color:#7f007f">minValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;0&quot;</span><span style="color:#000000"> </span><span style="color:#7f007f">maxValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;100&quot;</span><span style="color:#000000"> </span><span style="color:#7f007f">label</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Range:&quot;</span><span style="color:#000000"> </span><span style="color:#008080">/&gt;</span></span></span>
+</code></pre></div>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001200000004D88224EDF.png" width="201" height="54" style="display:inline-block; margin:4px;width:5.33cm;height:1.425cm;" class="odt-zoomable" data-zoom-src="images/10000000000001200000004D88224EDF.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<ul>
+  <li>Zeile 31: eine Umschaltfläche:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:switch</span><span style="color:#008080"> </span><span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;switch&quot;</span><span style="color:#008080"> </span><span style="color:#7f007f">onLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;yes&quot;</span><span style="color:#008080"> </span><span style="color:#7f007f">offLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;no&quot;</span><span style="color:#008080"> </span><span style="color:#7f007f">label</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Switch:&quot;</span><span style="color:#008080"> /&gt;</span></span></span>
+</code></pre></div>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000006B0000004EB7D35385.png" width="75" height="55" style="display:inline-block; margin:4px;width:1.981cm;height:1.445cm;" class="odt-zoomable" data-zoom-src="images/100000000000006B0000004EB7D35385.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000006B0000004F74709D0C.png" width="75" height="55" style="display:inline-block; margin:4px;width:1.981cm;height:1.462cm;" class="odt-zoomable" data-zoom-src="images/100000000000006B0000004F74709D0C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<ul>
+  <li>Zeile 32: ein Kontrollkästchen:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">p:selectBooleanCheckbox</span><span style="color:#008080"> </span><span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;booleanCheckbox&quot;</span><span style="color:#008080"> </span><span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;false&quot;</span><span style="color:#008080"> </span><span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;I agree&quot;</span><span style="color:#008080"> </span><span style="color:#7f007f">label</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Checkbox&quot;</span><span style="color:#008080">/&gt;</span></span></span>
+</code></pre></div>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000012D0000005413751E91.png" width="211" height="59" style="display:inline-block; margin:4px;width:5.57cm;height:1.554cm;" class="odt-zoomable" data-zoom-src="images/100000000000012D0000005413751E91.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<ul>
+  <li>Zeilen 33–37: eine Gruppe von Kontrollkästchen:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">p:selectManyCheckbox</span> <span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;checkbox&quot;</span> <span style="color:#7f007f">label</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Checkboxes: &quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:selectItem</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 1&quot;</span> <span style="color:#7f007f">itemValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 1&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:selectItem</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 2&quot;</span> <span style="color:#7f007f">itemValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 2&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:selectItem</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 3&quot;</span> <span style="color:#7f007f">itemValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 3&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">p:selectManyCheckbox</span><span style="color:#008080">&gt;</span></span></span>
+</code></pre></div>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000131000000A9F1A806B2.png" width="214" height="118" style="display:inline-block; margin:4px;width:5.65cm;height:3.131cm;" class="odt-zoomable" data-zoom-src="images/1000000000000131000000A9F1A806B2.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<ul>
+  <li>Zeilen 38–42: eine Gruppe von Optionsfeldern
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">p:selectOneRadio</span><span style="color:#008080"> </span><span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;radio&quot;</span><span style="color:#008080"> </span><span style="color:#7f007f">label</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Radios: &quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:selectItem</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 1&quot;</span> <span style="color:#7f007f">itemValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 1&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:selectItem</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 2&quot;</span> <span style="color:#7f007f">itemValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 2&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:selectItem</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 3&quot;</span> <span style="color:#7f007f">itemValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 3&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">p:selectOneRadio</span><span style="color:#008080">&gt;</span></span></span>
+</code></pre></div>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000012C000000A7DDFBB6DE.png" width="210" height="117" style="display:inline-block; margin:4px;width:5.56cm;height:3.096cm;" class="odt-zoomable" data-zoom-src="images/100000000000012C000000A7DDFBB6DE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<p>Beachten Sie, dass die Seite Tags aus den drei Bibliotheken verwendet: JSF, PF und PFM. Wir wissen nun genug, um unser erstes PrimeFaces Mobile-Projekt zu erstellen.</p>
+<p><a id="refheading105035100051761"></a></p>
+<h2 id="84-ein-erstes-primefaces-mobile-projekt-mv-pfm-01">8.4. <span style="color: #4f81bd">Ein erstes PrimeFaces Mobile-Projekt: mv-pfm-01</span></h2>
+<p>Wir werden das zuvor behandelte Beispiel noch einmal aufgreifen, um es in ein Maven-Projekt zu integrieren. So können wir die für ein PrimeFaces Mobile-Projekt erforderlichen Abhängigkeiten untersuchen.</p>
+<p><a id="refheading1267351553644564"></a></p>
+<h3 id="841-das-netbeans-projekt">8.4.1. <span style="color: #4f81bd">Das NetBeans-Projekt</span></h3>
+<p>Das NetBeans-Projekt sieht wie folgt aus:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000149000001ECD5583889.png" width="165" height="246" style="display:inline-block; margin:4px;width:4.353cm;height:6.511cm;" class="odt-zoomable" data-zoom-src="images/1000000000000149000001ECD5583889.png" /></td></tr></table>
+
+<p>Das NetBeans-Projekt beginnt als einfaches Maven-Webprojekt, dem die Abhängigkeiten [2] hinzugefügt wurden. Dies spiegelt sich in der Datei [pom.xml] mit dem folgenden Code wider:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">com.sun.faces</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">jsf-impl</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">2.1.8</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.primefaces</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">primefaces</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">3.2</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.primefaces</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">mobile</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">0.9.1</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">type</span><span style="color:#008080">&gt;</span><span style="color:#000000">jar</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">type</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">dependencies</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">repositories</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">repository</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">url</span><span style="color:#008080">&gt;</span><span style="color:#000000">http://download.java.net/maven/2/</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">url</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">id</span><span style="color:#008080">&gt;</span><span style="color:#000000">jsf20</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">id</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">layout</span><span style="color:#008080">&gt;</span><span style="color:#000000">default</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">layout</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">name</span><span style="color:#008080">&gt;</span><span style="color:#000000">Repository for library Library[jsf20]</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">name</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">repository</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">repository</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">url</span><span style="color:#008080">&gt;</span><span style="color:#000000">http://repository.primefaces.org/</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">url</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">id</span><span style="color:#008080">&gt;</span><span style="color:#000000">primefaces</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">id</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">layout</span><span style="color:#008080">&gt;</span><span style="color:#000000">default</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">layout</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">name</span><span style="color:#008080">&gt;</span><span style="color:#000000">Repository for library Library[primefaces]</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">name</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">repository</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">repositories</span><span style="color:#008080">&gt;</span></span></span>
+</code></pre></div>
+
+<p>In den Zeilen 11–16 die Abhängigkeit von PrimeFaces Mobile. Hier haben wir Version 0.9.1 verwendet (Zeile 14). Zusätzlich haben wir Version 3.2 von PrimeFaces verwendet (Zeile 9). Diese <strong>Versionsnummern sind wichtig</strong>. Tatsächlich bin ich auf einige Probleme mit PFM gestoßen, einer noch unfertigen Bibliothek. Eine Zeit lang gab es eine fehlerhafte Version 0.9.2. Diese wurde inzwischen entfernt. Wir sind auf Version 0.9.1 zurückgegangen. Das PFM-Projekt hat somit einen Rückschritt gemacht. Auch die Tests mit der 1.0-SNAPSHOT-Version der kommenden 1.0-Version (Anfang Juni 2012) sind fehlgeschlagen.</p>
+<p>Die Startseite [index.xhtml] [1] ist die Demoseite für PrimeFaces Mobile-Komponenten:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml</span> <span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;1.0&quot;</span> <span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;windows-1250&quot;</span><span style="color:#008080">?&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:view</span> <span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/1999/xhtml&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#7f007f">xmlns:f</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://java.sun.com/jsf/core&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#7f007f">xmlns:h</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://java.sun.com/jsf/html&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#7f007f">xmlns:ui</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://java.sun.com/jsf/facelets&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#7f007f">xmlns:p</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://primefaces.org/ui&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#7f007f">xmlns:pm</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://primefaces.org/mobile&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#7f007f">contentType</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;text/html&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:page</span> <span style="color:#7f007f">title</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Components&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- Main View --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:view</span> <span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;main&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pm:view</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- Forms --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:view</span> <span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;forms&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">...</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pm:view</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- Buttons --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:view</span> <span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;buttons&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">...</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pm:view</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">...</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pm:page</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">f:view</span><span style="color:#008080">&gt;</span></span></span>
+</code></pre></div>
+
+<p>Es gibt eine einzige Seite (Zeile 10), die aus zwölf Ansichten besteht. Wir werden hier nicht näher darauf eingehen. Das Ziel ist lediglich zu zeigen, wie man ein PrimeFaces Mobile-Projekt erstellt.</p>
+<p>Führen wir dieses Projekt aus. Wir erhalten eine Fehlerseite [1]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000051D00000323E6E6A619.png" width="655" height="402" style="display:inline-block; margin:4px;width:17.318cm;height:10.624cm;" class="odt-zoomable" data-zoom-src="images/100000000000051D00000323E6E6A619.png" /></td></tr></table>
+
+<p>Der Grund dafür ist, dass eine PrimeFaces Mobile-Anwendung mit dem Parameter [<strong>?javax.faces.RenderKitId=PRIMEFACES_MOBILE]</strong> aufgerufen werden muss, wie in [2] gezeigt. Sie können diesen Parameter umgehen, indem Sie die Datei [faces-config.xml] ändern (oder sie erstellen, falls sie nicht vorhanden ist, wie in diesem Fall) [3]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000513000001EEEEF53C27.png" width="650" height="247" style="display:inline-block; margin:4px;width:17.186cm;height:6.535cm;" class="odt-zoomable" data-zoom-src="images/1000000000000513000001EEEEF53C27.png" /></td></tr></table>
+
+<p>Der Inhalt lautet wie folgt:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;?xml version=&#x27;1.0&#x27; encoding=&#x27;UTF-8&#x27;?&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- =========== FULL CONFIGURATION FILE ================================== --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#800080">&lt;faces-config</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">version</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">2.0</span><span style="color:#800080">&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-style:italic;color:#008080">              </span><span style="color:#808000">xmlns</span><span style="color:#800080">=&quot;</span><span style="color:#000080">http://java.sun.com/xml/ns/javaee</span><span style="color:#800080">&quot;</span><span style="font-style:italic;color:#008080"> </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-style:italic;color:#008080">              </span><span style="color:#808000">xmlns:xsi</span><span style="color:#800080">=&quot;</span><span style="color:#000080">http://www.w3.org/2001/XMLSchema-instance</span><span style="color:#800080">&quot;</span><span style="font-style:italic;color:#008080"> </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-style:italic;color:#008080">              </span><span style="color:#808000">xsi:schemaLocation</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd</span><span style="color:#800080">&quot;&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#800080">&lt;application&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#800080">&lt;default-render-kit-id&gt;</span><span style="color:#000000">PRIMEFACES_MOBILE</span><span style="color:#800080">&lt;/default-render-kit-id&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#800080">&lt;/application&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;/faces-config&gt;</span></span>
+</code></pre></div>
+
+<ul>
+  <li>Zeile 11: Legt den Wert des Parameters [<b>javax.faces.RenderKitId</b>] fest.
+  </li>
+</ul>
+
+<p>Bei der Ausführung erhalten wir dieselbe Seite wie zuvor, jedoch ohne einen Parameter in die URL einfügen zu müssen [4]. Wir überlassen es dem Leser, diese Anwendung zu testen. Wir entdecken einige Fehler: Das &lt;<em>p:selectManyCheckbox</em>&gt;-Tag wird nicht angezeigt, ebenso wenig wie das &lt;<em>p:selectOneRadio</em>&gt;-Tag, und das &lt;<em>pm:range</em>&gt;-Tag funktioniert nicht. Diese Probleme, die auf der Demo-Website nicht auftreten, deuten darauf hin, dass die Demo mit der hier verwendeten Kombination aus PrimeFaces Mobile 0.9.1 und PrimeFaces 3.2 nicht funktioniert. Dennoch dient sie als Ausgangspunkt für die Erkundung der Tags in dieser Bibliothek, die sich noch in der Entwicklung befindet.</p>
+<p>Um eine realistischere Darstellung zu erhalten, können Sie die Anwendung auf einem Simulator wie dem iPhone 4-Simulator [<a href="http://iphone4simulator.com/"><u><span style="color: #0563c1">http://iphone4simulator.com/</span></u></a>] testen. Sie erhalten Folgendes:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001A2000002EA1BCA6DC2.png" width="209" height="373" style="display:inline-block; margin:4px;width:5.53cm;height:9.869cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A2000002EA1BCA6DC2.png" /></td></tr></table>
+
+<p>Geben Sie [5] ein, dieselbe URL, die der vorherige Browser in [4] verwendet hat.</p>
+<p><a id="refheading1050351000517611"></a></p>
+<h2 id="85-beispiel-mv-pfm-02-formular-und-modell">8.5. <span style="color: #4f81bd">Beispiel mv-pfm-02: Formular und Modell</span></h2>
+<p>In diesem Projekt demonstrieren wir die Interaktionen zwischen einer PrimeFaces Mobile-Seite und ihrem Modell. Diese Interaktionen folgen den Regeln des JSF-Frameworks, auf dem PrimeFaces Mobile letztlich basiert.</p>
+<p><a id="refheading1267371553644564"></a></p>
+<h3 id="851-die-ansichten">8.5.1. <span style="color: #4f81bd">Die Ansichten</span></h3>
+<p>Das Projekt umfasst zwei Ansichten</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000002F6000001C6B8807623.png" width="379" height="227" style="display:inline-block; margin:4px;width:10.028cm;height:6.006cm;" class="odt-zoomable" data-zoom-src="images/10000000000002F6000001C6B8807623.png" /></td></tr></table>
+
+<ul>
+  <li>Ansicht 1 [1] zeigt ein Formular an, das abgeschickt werden kann [2],
+  </li>
+  <li>Ansicht 2 [3] bestätigt die Eingaben und bietet die Möglichkeit, zum Formular zurückzukehren [4].
+  </li>
+</ul>
+
+<p>Das Projekt veranschaulicht zwei Dinge:</p>
+<ul>
+  <li>die Beziehung zwischen einer Seite und ihrer Vorlage,
+  </li>
+  <li>die Navigation zwischen den Ansichten auf der Seite.
+  </li>
+</ul>
+
+<p><a id="refheading1267391553644564"></a></p>
+<h3 id="852-das-netbeans-projekt">8.5.2. <span style="color: #4f81bd">Das NetBeans-Projekt</span></h3>
+<p>Das NetBeans-Projekt sieht wie folgt aus:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000002F0000001EBE6C50E56.png" width="376" height="245" style="display:inline-block; margin:4px;width:9.948cm;height:6.495cm;" class="odt-zoomable" data-zoom-src="images/10000000000002F0000001EBE6C50E56.png" /></td></tr></table>
+
+<ul>
+  <li>in [1], der PrimeFaces Mobile-Seite,
+  </li>
+  <li>in [2] die entsprechende Vorlage
+  </li>
+  <li>in [3] die Nachrichtendateien, da die Anwendung internationalisiert ist,
+  </li>
+  <li>in [4] die Projektabhängigkeiten.
+  </li>
+</ul>
+
+<p><a id="refheading1267411553644564"></a></p>
+<h3 id="853-projektkonfiguration">8.5.3. <span style="color: #4f81bd">Projektkonfiguration</span></h3>
+<p>Wir stellen die Konfigurationsdateien zur Verfügung, ohne sie zu erläutern. Sie sind mittlerweile Standard.</p>
+<p>[web.xml]: Konfiguriert die Webanwendung:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#800080">&lt;web-app</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">version</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">3.0</span><span style="color:#800080">&quot;</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">xmlns</span><span style="color:#800080">=&quot;</span><span style="color:#000080">http://java.sun.com/xml/ns/javaee</span><span style="color:#800080">&quot;</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">xmlns:xsi</span><span style="color:#800080">=&quot;</span><span style="color:#000080">http://www.w3.org/2001/XMLSchema-instance</span><span style="color:#800080">&quot;</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">xsi:schemaLocation</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd</span><span style="color:#800080">&quot;&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#800080">&lt;context-param&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#800080">&lt;param-name&gt;</span><span style="color:#000000">javax.faces.PROJECT_STAGE</span><span style="color:#800080">&lt;/param-name&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#800080">&lt;param-value&gt;</span><span style="color:#000000">Development</span><span style="color:#800080">&lt;/param-value&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#800080">&lt;/context-param&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#800080">&lt;servlet&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#800080">&lt;servlet-name&gt;</span><span style="color:#000000">Faces Servlet</span><span style="color:#800080">&lt;/servlet-name&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#800080">&lt;servlet-class&gt;</span><span style="color:#000000">javax.faces.webapp.FacesServlet</span><span style="color:#800080">&lt;/servlet-class&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#800080">&lt;load-on-startup&gt;</span><span style="color:#000000">1</span><span style="color:#800080">&lt;/load-on-startup&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#800080">&lt;/servlet&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#800080">&lt;servlet-mapping&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#800080">&lt;servlet-name&gt;</span><span style="color:#000000">Faces Servlet</span><span style="color:#800080">&lt;/servlet-name&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#800080">&lt;url-pattern&gt;</span><span style="color:#000000">/faces/*</span><span style="color:#800080">&lt;/url-pattern&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#800080">&lt;/servlet-mapping&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#800080">&lt;session-config&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#800080">&lt;session-timeout&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            30</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#800080">&lt;/session-timeout&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#800080">&lt;/session-config&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#800080">&lt;welcome-file-list&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#800080">&lt;welcome-file&gt;</span><span style="color:#000000">faces/index.xhtml</span><span style="color:#800080">&lt;/welcome-file&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#800080">&lt;/welcome-file-list&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;/web-app&gt;</span></span>
+</code></pre></div>
+
+<p>[faces-config.xml]: konfiguriert die JSF-Anwendung:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;?xml version=&#x27;1.0&#x27; encoding=&#x27;UTF-8&#x27;?&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- =========== FULL CONFIGURATION FILE ================================== --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#800080">&lt;faces-config</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">version</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">2.0</span><span style="color:#800080">&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-style:italic;color:#008080">              </span><span style="color:#808000">xmlns</span><span style="color:#800080">=&quot;</span><span style="color:#000080">http://java.sun.com/xml/ns/javaee</span><span style="color:#800080">&quot;</span><span style="font-style:italic;color:#008080"> </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-style:italic;color:#008080">              </span><span style="color:#808000">xmlns:xsi</span><span style="color:#800080">=&quot;</span><span style="color:#000080">http://www.w3.org/2001/XMLSchema-instance</span><span style="color:#800080">&quot;</span><span style="font-style:italic;color:#008080"> </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-style:italic;color:#008080">              </span><span style="color:#808000">xsi:schemaLocation</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd</span><span style="color:#800080">&quot;&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#800080">&lt;application&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#800080">&lt;resource-bundle&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#800080">&lt;base-name&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        messages</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#800080">&lt;/base-name&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#800080">&lt;var&gt;</span><span style="color:#000000">msg</span><span style="color:#800080">&lt;/var&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#800080">&lt;/resource-bundle&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#800080">&lt;message-bundle&gt;</span><span style="color:#000000">messages</span><span style="color:#800080">&lt;/message-bundle&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#800080">&lt;default-render-kit-id&gt;</span><span style="color:#000000">PRIMEFACES_MOBILE</span><span style="color:#800080">&lt;/default-render-kit-id&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#800080">&lt;/application&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;/faces-config&gt;</span></span>
+</code></pre></div>
+
+<p>[messages_fr.properties]: die französische Sprachdatei:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">forms=</span><span style="color:#2a00ff">Formulaire</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">input=</span><span style="color:#2a00ff">Saisie</span><span style="color:#000000"> </span><span style="color:#2a00ff">de</span><span style="color:#000000"> </span><span style="color:#2a00ff">texte</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">textarea=</span><span style="color:#2a00ff">Saisie</span><span style="color:#000000"> </span><span style="color:#2a00ff">multi-lignes</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">dropdown=</span><span style="color:#2a00ff">Liste</span><span style="color:#000000"> </span><span style="color:#2a00ff">d\u00e9roulante</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">range=</span><span style="color:#2a00ff">Slider</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">switch=</span><span style="color:#2a00ff">Switch</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">checkbox=</span><span style="color:#2a00ff">Case</span><span style="color:#000000"> </span><span style="color:#2a00ff">\u00e0</span><span style="color:#000000"> </span><span style="color:#2a00ff">cocher</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">checkboxes=</span><span style="color:#2a00ff">Cases</span><span style="color:#000000"> </span><span style="color:#2a00ff">\u00e0</span><span style="color:#000000"> </span><span style="color:#2a00ff">cocher</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">radios=</span><span style="color:#2a00ff">Boutons</span><span style="color:#000000"> </span><span style="color:#2a00ff">radio</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">valider=</span><span style="color:#2a00ff">Valider</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">confirmations=</span><span style="color:#2a00ff">Confirmations</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">back=</span><span style="color:#2a00ff">Retour</span></span></span>
+</code></pre></div>
+
+<p><a id="refheading1267431553644564"></a></p>
+<h3 id="854-die-primefaces-mobilseite">8.5.4. <span style="color: #4f81bd">Die Primefaces-Mobilseite</span></h3>
+<p>Die Seite [index.xhtml] sieht wie folgt aus:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml</span> <span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;1.0&quot;</span> <span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&#x27;UTF-8&#x27;</span><span style="color:#008080">?&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:view</span> <span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/1999/xhtml&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#7f007f">xmlns:f</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://java.sun.com/jsf/core&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#7f007f">xmlns:h</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://java.sun.com/jsf/html&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#7f007f">xmlns:ui</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://java.sun.com/jsf/facelets&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#7f007f">xmlns:p</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://primefaces.org/ui&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#7f007f">xmlns:pm</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://primefaces.org/mobile&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#7f007f">contentType</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;text/html&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:page</span> <span style="color:#7f007f">title</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;mv-pfm-02&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- forms view --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:view</span> <span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;forms&quot;</span> <span style="color:#7f007f">swatch</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;b&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:header</span> <span style="color:#7f007f">title</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#{msg[&#x27;forms&#x27;]}&quot;</span><span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:content</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">h:form</span> <span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;formulaire&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">p:inputText</span> <span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;inputText&quot;</span> <span style="color:#7f007f">label</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#{msg[&#x27;input&#x27;]}&quot;</span> <span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#{form.inputText}&quot;</span><span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">p:inputTextarea</span> <span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;inputTextArea&quot;</span> <span style="color:#7f007f">label</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#{msg[&#x27;textarea&#x27;]}&quot;</span> <span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#{form.inputTextArea}&quot;</span><span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:field</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">h:outputLabel</span> <span style="color:#7f007f">for</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;selectOneMenu&quot;</span> <span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#{msg[&#x27;dropdown&#x27;]}&quot;</span><span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">h:selectOneMenu</span> <span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;selectOneMenu&quot;</span> <span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#{form.selectOneMenu}&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">              </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:selectItem</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 1&quot;</span> <span style="color:#7f007f">itemValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;1&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">              </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:selectItem</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 2&quot;</span> <span style="color:#7f007f">itemValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;2&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">              </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:selectItem</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 3&quot;</span> <span style="color:#7f007f">itemValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;3&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">h:selectOneMenu</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pm:field</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:inputRange</span> <span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;range&quot;</span> <span style="color:#7f007f">minValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;0&quot;</span> <span style="color:#7f007f">maxValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;100&quot;</span> <span style="color:#7f007f">label</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#{msg[&#x27;range&#x27;]}&quot;</span> <span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#{form.range}&quot;</span><span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:switch</span> <span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;switch&quot;</span> <span style="color:#7f007f">onLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;yes&quot;</span> <span style="color:#7f007f">offLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;no&quot;</span> <span style="color:#7f007f">label</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#{msg[&#x27;switch&#x27;]}&quot;</span> <span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#{form.bswitch}&quot;</span><span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">p:selectBooleanCheckbox</span> <span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;booleanCheckbox&quot;</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;I agree&quot;</span> <span style="color:#7f007f">label</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#{msg[&#x27;checkbox&#x27;]}&quot;</span> <span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#{form.booleanCheckbox}&quot;</span><span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:field</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">h:outputLabel</span> <span style="color:#7f007f">for</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;manyCheckbox&quot;</span> <span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#{msg[&#x27;checkboxes&#x27;]}&quot;</span><span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">h:selectManyCheckbox</span> <span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;manyCheckbox&quot;</span> <span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#{form.manyCheckbox}&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">              </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:selectItem</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 1&quot;</span> <span style="color:#7f007f">itemValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;1&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">              </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:selectItem</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 2&quot;</span> <span style="color:#7f007f">itemValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;2&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">              </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:selectItem</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 3&quot;</span> <span style="color:#7f007f">itemValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;3&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">h:selectManyCheckbox</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pm:field</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:field</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">h:outputLabel</span> <span style="color:#7f007f">for</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;radio&quot;</span> <span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#{msg[&#x27;radios&#x27;]}&quot;</span><span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">h:selectOneRadio</span> <span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;radio&quot;</span> <span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#{form.radio}&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">              </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:selectItem</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 1&quot;</span> <span style="color:#7f007f">itemValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;1&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">              </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:selectItem</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 2&quot;</span> <span style="color:#7f007f">itemValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;2&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">              </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:selectItem</span> <span style="color:#7f007f">itemLabel</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Option 3&quot;</span> <span style="color:#7f007f">itemValue</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;3&quot;</span> <span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">h:selectOneRadio</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pm:field</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">p:commandButton</span> <span style="color:#7f007f">inline</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;true&quot;</span> <span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#{msg[&#x27;valider&#x27;]}&quot;</span> <span style="color:#7f007f">update</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;:infos&quot;</span> <span style="color:#7f007f">action</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#{form.valider}&quot;</span><span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">h:form</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pm:content</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pm:view</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- info view --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:view</span> <span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;infos&quot;</span> <span style="color:#7f007f">swatch</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;b&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:header</span> <span style="color:#7f007f">title</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#{msg[&#x27;confirmations&#x27;]}&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:facet</span> <span style="color:#7f007f">name</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;left&quot;</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">p:button</span> <span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#{msg[&#x27;back&#x27;]}&quot;</span> <span style="color:#7f007f">icon</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;back&quot;</span> <span style="color:#7f007f">href</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#forms?reverse=true&quot;</span><span style="color:#008080">/&gt;&lt;/</span><span style="color:#3f7f7f">f:facet</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pm:header</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:content</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">ul</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span><span style="color:#000000">#{msg[&#x27;input&#x27;]} : ${form.inputText}</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span><span style="color:#000000">#{msg[&#x27;textarea&#x27;]} : ${form.inputTextArea}</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span><span style="color:#000000">#{msg[&#x27;dropdown&#x27;]} : ${form.selectOneMenu}</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span><span style="color:#000000">#{msg[&#x27;range&#x27;]} : ${form.range}</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span><span style="color:#000000">#{msg[&#x27;switch&#x27;]} : ${form.bswitch}</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span><span style="color:#000000">#{msg[&#x27;checkbox&#x27;]} : ${form.booleanCheckbox}</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span><span style="color:#000000">#{msg[&#x27;checkboxes&#x27;]} : ${form.manyCheckboxValue}</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span><span style="color:#000000">#{msg[&#x27;radios&#x27;]} : ${form.radio}</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">ul</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pm:content</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pm:view</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pm:page</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">f:view</span><span style="color:#008080">&gt;</span></span></span>
+</code></pre></div>
+
+<p>Wir haben das Demo-Beispiel von der PrimeFaces Mobile-Website übernommen und es so angepasst, dass es funktioniert:</p>
+<ul>
+  <li>Das &lt;<i>p:selectManyCheckbox</i>&gt;-Tag wurde nicht angezeigt. Wir haben es durch ein &lt;<i>h:selectManyCheckbox</i>&gt;-Tag ersetzt (Zeile 32),
+  </li>
+  <li>das &lt;<i>p:selectOneRadio</i>&gt;-Tag wurde nicht angezeigt. Wir haben es durch ein &lt;<i>p:selectOneRadio</i>&gt;-Tag ersetzt (Zeile 40),
+  </li>
+  <li>Zeile 27: Wir haben das &lt;<i>pm:inputRange</i>&gt;-Tag beibehalten, das einen Schieberegler anzeigt. Dieser Schieberegler weist einen Fehler auf: Man kann den Cursor des Schiebereglers nicht bewegen. Man kann jedoch eine Zahl eingeben, die ihn bewegt,
+  </li>
+  <li>Beachten Sie, dass es nur wenige PFM-spezifische Tags gibt (Zeilen 13, 14, 15, 19, 27 und 28 in der ersten Ansicht). Die anderen Tags sind Standard-JSF- und PF-Tags. PrimeFaces Mobile basiert auf diesen beiden Frameworks.
+  </li>
+</ul>
+
+<p>Beachten Sie die Seitenstruktur:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml</span> <span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;1.0&quot;</span> <span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&#x27;UTF-8&#x27;</span><span style="color:#008080">?&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:view</span> <span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/1999/xhtml&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#7f007f">xmlns:f</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://java.sun.com/jsf/core&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#7f007f">xmlns:h</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://java.sun.com/jsf/html&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#7f007f">xmlns:ui</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://java.sun.com/jsf/facelets&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#7f007f">xmlns:p</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://primefaces.org/ui&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#7f007f">xmlns:pm</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://primefaces.org/mobile&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#7f007f">contentType</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;text/html&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:page</span> <span style="color:#7f007f">title</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;mv-pfm-02&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- forms view --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:view</span> <span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;forms&quot;</span> <span style="color:#7f007f">swatch</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;b&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:header ...</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:content</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">h:form</span> <span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;formulaire&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">...</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">p:commandButton</span> <span style="color:#7f007f">inline</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;true&quot;</span> <span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#{msg[&#x27;valider&#x27;]}&quot;</span> <span style="color:#7f007f">update</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;:infos&quot;</span> <span style="color:#7f007f">action</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#{form.valider}&quot;</span><span style="color:#008080">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">h:form</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pm:content</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pm:view</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- info view --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:view</span> <span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;infos&quot;</span> <span style="color:#7f007f">swatch</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;b&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:header</span><span style="color:#000000"> </span><span style="color:#7f007f">title</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#{msg[&#x27;confirmations&#x27;]}&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:facet</span> <span style="color:#7f007f">name</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;left&quot;</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">p:button</span> <span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#{msg[&#x27;back&#x27;]}&quot;</span> <span style="color:#7f007f">icon</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;back&quot;</span> <span style="color:#7f007f">href</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#forms?reverse=true&quot;</span><span style="color:#008080">/&gt;&lt;/</span><span style="color:#3f7f7f">f:facet</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pm:header</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:content</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">...</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pm:content</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pm:view</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pm:page</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">f:view</span><span style="color:#008080">&gt;</span></span></span>
+</code></pre></div>
+
+<ul>
+  <li>Zeile 10: definiert eine PFM-Seite. Das Attribut <b>„title“ </b>legt den vom Browser angezeigten Titel fest;
+  </li>
+  <li>eine Seite besteht aus einer oder mehreren Ansichten. Wenn die Seite zum ersten Mal angezeigt wird, wird die erste Ansicht angezeigt. Anschließend navigieren Sie von einer Ansicht zur nächsten. Hier gibt es zwei Ansichten: <b>„forms“ </b>in Zeile 13 und <b>„info“ </b>in Zeile 24,
+  </li>
+  <li>Zeile 14: Das <b>header</b>-Tag definiert die Kopfzeile einer Ansicht,
+  </li>
+  <li>Zeile 15: Das <b>content</b>-Tag definiert den Inhalt einer Ansicht,
+  </li>
+  <li>Zeile 16: Die Ansicht <b>„Forms“ </b>enthält ein JSF-Formular,
+  </li>
+  <li>Zeile 18: Dieses Formular wird über eine Standard-PrimeFaces-Schaltfläche übermittelt. Das Formular wird an das [Form]-Modell gesendet und von der Methode<i> [Form].validate </i>verarbeitet. Diese Methode erledigt ihre Aufgabe. Wir werden sehen, dass sie die Anzeige der Info-Ansicht anfordert. Zuvor wurde die Ansicht über einen AJAX-Aufruf (update-Attribut) aktualisiert,
+  </li>
+  <li>Zeile 26: Wir können mithilfe einer Schaltfläche von der <b>Info</b>-Ansicht zur Formularansicht wechseln. Beachten Sie das Format des href-Attributs [<span style="color: #000000">href=</span><i><span style="color: #2a00ff">&quot;#forms?reverse=true&quot;</span></i>]. Die Notation <b>#forms </b>bezieht sich auf die Formularansicht. Der Parameter <i>reverse=true </i>fordert die Rückkehr zur vorherigen Seite an. Ich habe dieses Attribut aus der Demo übernommen. Wenn man es entfernt, sieht man auf einem Simulator keinen Unterschied... Vielleicht gibt es einen auf echten Smartphones,
+  </li>
+  <li>Beachten Sie schließlich die Verwendung der PrimeFaces Mobile-Bibliothek in Zeile 7.
+  </li>
+</ul>
+
+<p>Auch wenn sie neue Funktionen einführt, ist diese PFM-Seite recht unkompliziert. Das Gleiche gilt für ihre Vorlage [Form.java].</p>
+<p><a id="refheading1267451553644564"></a></p>
+<h3 id="855-die-vorlage-formjava">8.5.5. <span style="color: #4f81bd">Die Vorlage [Form.java]</span></h3>
+<p>Dieses Modell sieht wie folgt aus:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> beans;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">import</span><span style="color:#000000"> java.io.Serializable;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">import</span><span style="color:#000000"> javax.faces.bean.ManagedBean;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">import</span><span style="color:#000000"> javax.faces.bean.SessionScoped;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#646464">@</span><span style="color:#000000">ManagedBean</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#646464">@</span><span style="color:#000000">SessionScoped</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000"> Form </span><span style="font-weight:bold;color:#7f0055">implements</span><span style="color:#000000"> Serializable {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// model</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> String inputText = </span><span style="color:#2a00ff">&quot;bonjour&quot;</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> String inputTextArea = </span><span style="color:#2a00ff">&quot;ligne1\nligne2&quot;</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> String selectOneMenu = </span><span style="color:#2a00ff">&quot;2&quot;</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">int</span><span style="color:#000000"> range = 4;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">boolean</span><span style="color:#000000"> bswitch = </span><span style="font-weight:bold;color:#7f0055">true</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">boolean</span><span style="color:#000000"> booleanCheckbox = </span><span style="font-weight:bold;color:#7f0055">false</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> String[] manyCheckbox = {</span><span style="color:#2a00ff">&quot;1&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;3&quot;</span><span style="color:#000000">};</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> String radio = </span><span style="color:#2a00ff">&quot;3&quot;</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> String valider() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// we move on to the news view</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">return</span><span style="color:#000000"> </span><span style="color:#2a00ff">&quot;pm:infos&quot;</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> String getManyCheckboxValue() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    StringBuffer str = </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> StringBuffer(</span><span style="color:#2a00ff">&quot;[&quot;</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">for</span><span style="color:#000000"> (String checkbox : manyCheckbox) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      str.append(checkbox);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    str.append(</span><span style="color:#2a00ff">&quot;]&quot;</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">return</span><span style="color:#000000"> str.toString();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// getters and setters</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p>Das ist nichts Neues. Das haben wir alles schon einmal gesehen. Beachten Sie jedoch die Form der vom Formular aufgerufenen Validierungsmethode. Zeile 21: Sie gibt eine Zeichenkette in der Form <strong>„pm:viewname“</strong> zurück. Hier wird die Info-Ansicht angezeigt. Die Methode führt nichts anderes als diese Navigation durch. Zuvor haben die Felder in den Zeilen 12–19 die übermittelten Werte empfangen. Diese werden verwendet, um die Info-Ansicht zu aktualisieren (update-Attribut unten):</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">p:commandButton</span> <span style="color:#7f007f">inline</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;true&quot;</span> <span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#{msg[&#x27;valider&#x27;]}&quot;</span> <span style="color:#7f007f">update</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;:infos&quot;</span> <span style="color:#7f007f">action</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#{form.valider}&quot;</span><span style="color:#008080">/&gt;</span></span></span>
+</code></pre></div>
+
+<p>Die <strong>Info</strong>-Ansicht zeigt dann die übermittelten Werte an:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001250000012D464A78FB.png" width="205" height="211" style="display:inline-block; margin:4px;width:5.429cm;height:5.577cm;" class="odt-zoomable" data-zoom-src="images/10000000000001250000012D464A78FB.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:view</span> <span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;infos&quot;</span> <span style="color:#7f007f">swatch</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;b&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:header</span> <span style="color:#7f007f">title</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#{msg[&#x27;confirmations&#x27;]}&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">f:facet</span> <span style="color:#7f007f">name</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;left&quot;</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">p:button</span> <span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#{msg[&#x27;back&#x27;]}&quot;</span> <span style="color:#7f007f">icon</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;back&quot;</span> <span style="color:#7f007f">href</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;#forms&quot;</span><span style="color:#008080">/&gt;&lt;/</span><span style="color:#3f7f7f">f:facet</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pm:header</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pm:content</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">ul</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span><span style="color:#000000">#{msg[&#x27;input&#x27;]} : ${form.inputText}</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span><span style="color:#000000">#{msg[&#x27;textarea&#x27;]} : ${form.inputTextArea}</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span><span style="color:#000000">#{msg[&#x27;dropdown&#x27;]} : ${form.selectOneMenu}</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span><span style="color:#000000">#{msg[&#x27;range&#x27;]} : ${form.range}</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span><span style="color:#000000">#{msg[&#x27;switch&#x27;]} : ${form.bswitch}</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span><span style="color:#000000">#{msg[&#x27;checkbox&#x27;]} : ${form.booleanCheckbox}</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span><span style="color:#000000">#{msg[&#x27;checkboxes&#x27;]} : ${form.manyCheckboxValue}</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span><span style="color:#000000">#{msg[&#x27;radios&#x27;]} : ${form.radio}</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">ul</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pm:content</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pm:view</span><span style="color:#008080">&gt;</span></span></span>
+</code></pre></div>
+
+<p><a id="refheading1267471553644564"></a>
+<a id="tests-mv-pfm-02"></a></p>
+<h3 id="856-test-">8.5.6. <span style="color: #4f81bd">Test-</span></h3>
+<p>Führen Sie das NetBeans-Projekt aus. Sobald das Projekt auf Tomcat [1] bereitgestellt wurde, können Sie es auf einem Simulator [http://iphone4simulator.com/] [2] testen:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000003D00000026448F2FD2A.png" width="488" height="306" style="display:inline-block; margin:4px;width:12.912cm;height:8.096cm;" class="odt-zoomable" data-zoom-src="images/10000000000003D00000026448F2FD2A.png" /></td></tr></table>
+
+<p>Wir zeigen Ihnen nun, wie Sie es auf einem echten Smartphone testen können<a id="tests-avec-vrai-smartphone"></a> . Wir verbinden den Server, auf dem die Anwendung gehostet wird, und das Smartphone mit demselben WLAN-Netzwerk:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000222000000BB03FB15D6.png" width="273" height="94" style="display:inline-block; margin:4px;width:7.223cm;height:2.475cm;" class="odt-zoomable" data-zoom-src="images/1000000000000222000000BB03FB15D6.png" /></td></tr></table>
+
+<p>Verbinden Sie den Server mit dem WLAN-Netzwerk. Anschließend können Sie dessen IP-Adresse überprüfen:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000003530000011EC101BD58.png" width="426" height="143" style="display:inline-block; margin:4px;width:11.259cm;height:3.784cm;" class="odt-zoomable" data-zoom-src="images/10000000000003530000011EC101BD58.png" /></td></tr></table>
+
+<p>Notieren Sie sich die oben angegebene IP-Adresse des Servers: 192.168.1.127. Deaktivieren Sie alle Firewalls und Antivirenprogramme auf dem Server:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000261000000F190E7C675.png" width="426" height="169" style="display:inline-block; margin:4px;width:11.28cm;height:4.464cm;" class="odt-zoomable" data-zoom-src="images/1000000000000261000000F190E7C675.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<p>Starten Sie auf dem Server die Anwendung [mv-pfm-02] in NetBeans [1]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000036B000001C77663758C.png" width="438" height="228" style="display:inline-block; margin:4px;width:11.576cm;height:6.02cm;" class="odt-zoomable" data-zoom-src="images/100000000000036B000001C77663758C.png" /></td></tr></table>
+
+<p>Verbinden Sie das Smartphone mit demselben WLAN-Netzwerk wie der Server, damit sich die beiden Geräte gegenseitig erkennen können. Öffnen Sie dann einen Browser und geben Sie die URL [http://192.168.1.127:8080/mv-pfm-02/] [2] ein. Sie können die Anwendung nun testen. Sie werden erfreut feststellen, dass der Schieberegler, der im Simulator nicht funktioniert, auf dem Smartphone funktioniert. Es besteht also eine Diskrepanz zwischen Simulatoren und tatsächlichen Geräten.</p>
+<p><a id="refheading1267491553644564"></a></p>
+<h2 id="86-fazit">8.6. <span style="color: #4f81bd">Fazit</span></h2>
+<p>Wir haben nur die Formular-Tags aus der PrimeFaces Mobile-Bibliothek behandelt, aber das reicht für unsere Beispielanwendung aus.</p>
+<p><a id="refheading1267511553644564"></a></p>
+<h2 id="87-testen-mit-eclipse">8.7. <span style="color: #4f81bd">Testen mit Eclipse</span></h2>
+<p>Importieren Sie die Maven-Projekte [1] in Eclipse und führen Sie sie aus [2],</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004FE00000132DA2A3484.png" width="639" height="153" style="display:inline-block; margin:4px;width:16.907cm;height:4.048cm;" class="odt-zoomable" data-zoom-src="images/10000000000004FE00000132DA2A3484.png" /></td></tr></table>
+
+<p>auf dem Tomcat-Server [3]. Die laufende Anwendung wird dann im internen Browser von Eclipse angezeigt [4].</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000051700000131B69790A7.png" width="652" height="153" style="display:inline-block; margin:4px;width:17.238cm;height:4.036cm;" class="odt-zoomable" data-zoom-src="images/100000000000051700000131B69790A7.png" /></td></tr></table>
+
+<p>Beachten Sie, dass die Anwendung [mv-pfm-02] im Eclipse-Browser Fehlfunktionen aufwies. Beim Laden in Firefox- oder IE-Browsern traten diese Probleme nicht mehr auf.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        Dieses Tutorial, verfasst von <strong>Serge Tahé</strong>, wird der Öffentlichkeit unter den Bedingungen der
+<em>Creative Commons Namensnennung – Nicht kommerziell –
+Weitergabe unter gleichen Bedingungen 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
